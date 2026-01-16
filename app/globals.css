@@ -1,78 +1,138 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
-/* Updated theme to green/teal palette inspired by EthicHub's agricultural/sustainable focus */
+/* 
+  EthicHub Brand Colors:
+  - Primary Navy:   #062F4F (dark, serious - main brand color)
+  - Bright Green:   #87F96E (vibrant - use sparingly for CTAs/highlights)
+  - Teal:           #74D7DC (fresh, approachable - secondary accent)
+  - Off-White:      #F9FAF8 (clean backgrounds)
+  - Sage Gray:      #E6EAE5 (natural, muted elements)
+*/
+
 :root {
-  --background: oklch(0.98 0.005 145);
-  --foreground: oklch(0.15 0.02 145);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.02 145);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.02 145);
-  --primary: oklch(0.45 0.15 145);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.94 0.01 145);
-  --secondary-foreground: oklch(0.25 0.02 145);
-  --muted: oklch(0.92 0.01 145);
-  --muted-foreground: oklch(0.45 0.02 145);
-  --accent: oklch(0.55 0.18 145);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0.02 145);
-  --input: oklch(0.92 0.01 145);
-  --ring: oklch(0.55 0.18 145);
-  --chart-1: oklch(0.55 0.18 145);
-  --chart-2: oklch(0.6 0.15 180);
-  --chart-3: oklch(0.5 0.12 100);
-  --chart-4: oklch(0.65 0.15 85);
-  --chart-5: oklch(0.7 0.12 200);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.45 0.15 145);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0.01 145);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Backgrounds - Off-white #F9FAF8 based */
+  --background: #F9FAF8;
+  --foreground: #062F4F;
+  
+  /* Cards - Pure white for contrast */
+  --card: #FFFFFF;
+  --card-foreground: #062F4F;
+  
+  /* Popovers */
+  --popover: #FFFFFF;
+  --popover-foreground: #062F4F;
+  
+  /* Primary - Navy #062F4F */
+  --primary: #062F4F;
+  --primary-foreground: #FFFFFF;
+  
+  /* Secondary - Sage gray #E6EAE5 */
+  --secondary: #E6EAE5;
+  --secondary-foreground: #062F4F;
+  
+  /* Muted - Lighter sage */
+  --muted: #E6EAE5;
+  --muted-foreground: #4A6275;
+  
+  /* Accent - Bright green #87F96E (used for highlights/CTAs) */
+  --accent: #87F96E;
+  --accent-foreground: #062F4F;
+  
+  /* Highlight - Teal #74D7DC (secondary accent) */
+  --highlight: #74D7DC;
+  --highlight-foreground: #062F4F;
+  
+  /* Destructive */
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Borders & inputs */
+  --border: #D4DBD3;
+  --input: #E6EAE5;
+  --ring: #74D7DC;
+  
+  /* Charts - Using brand palette */
+  --chart-1: #062F4F;
+  --chart-2: #74D7DC;
+  --chart-3: #87F96E;
+  --chart-4: #4A6275;
+  --chart-5: #A8D5A2;
+  
+  --radius: 0.625rem;
+  
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #062F4F;
+  --sidebar-primary: #062F4F;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E6EAE5;
+  --sidebar-accent-foreground: #062F4F;
+  --sidebar-border: #D4DBD3;
+  --sidebar-ring: #74D7DC;
 }
 
 .dark {
-  --background: oklch(0.12 0.02 145);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.16 0.02 145);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.12 0.02 145);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.6 0.18 145);
-  --primary-foreground: oklch(0.12 0.02 145);
-  --secondary: oklch(0.22 0.02 145);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.22 0.02 145);
-  --muted-foreground: oklch(0.65 0.02 145);
-  --accent: oklch(0.6 0.18 145);
-  --accent-foreground: oklch(0.12 0.02 145);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.25 0.02 145);
-  --input: oklch(0.22 0.02 145);
-  --ring: oklch(0.6 0.18 145);
-  --chart-1: oklch(0.6 0.18 145);
-  --chart-2: oklch(0.65 0.15 180);
-  --chart-3: oklch(0.55 0.12 100);
-  --chart-4: oklch(0.7 0.15 85);
-  --chart-5: oklch(0.75 0.12 200);
-  --sidebar: oklch(0.16 0.02 145);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.6 0.18 145);
-  --sidebar-primary-foreground: oklch(0.12 0.02 145);
-  --sidebar-accent: oklch(0.22 0.02 145);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.25 0.02 145);
-  --sidebar-ring: oklch(0.45 0.02 145);
+  /* Dark mode - Navy-based backgrounds */
+  --background: #041E32;
+  --foreground: #F9FAF8;
+  
+  /* Cards - Slightly lighter navy */
+  --card: #062F4F;
+  --card-foreground: #F9FAF8;
+  
+  /* Popovers */
+  --popover: #062F4F;
+  --popover-foreground: #F9FAF8;
+  
+  /* Primary - Teal for visibility in dark mode */
+  --primary: #74D7DC;
+  --primary-foreground: #041E32;
+  
+  /* Secondary */
+  --secondary: #0A3D5F;
+  --secondary-foreground: #F9FAF8;
+  
+  /* Muted */
+  --muted: #0A3D5F;
+  --muted-foreground: #9BB5C5;
+  
+  /* Accent - Bright green (perfect pop in dark mode) */
+  --accent: #87F96E;
+  --accent-foreground: #041E32;
+  
+  /* Highlight - Teal */
+  --highlight: #74D7DC;
+  --highlight-foreground: #041E32;
+  
+  /* Destructive */
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Borders & inputs */
+  --border: #1A4A6A;
+  --input: #0A3D5F;
+  --ring: #87F96E;
+  
+  /* Charts */
+  --chart-1: #74D7DC;
+  --chart-2: #87F96E;
+  --chart-3: #9BB5C5;
+  --chart-4: #5BA8AD;
+  --chart-5: #A8D5A2;
+  
+  /* Sidebar */
+  --sidebar: #062F4F;
+  --sidebar-foreground: #F9FAF8;
+  --sidebar-primary: #74D7DC;
+  --sidebar-primary-foreground: #041E32;
+  --sidebar-accent: #0A3D5F;
+  --sidebar-accent-foreground: #F9FAF8;
+  --sidebar-border: #1A4A6A;
+  --sidebar-ring: #87F96E;
 }
 
 @theme inline {
@@ -91,6 +151,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -113,6 +175,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Brand colors available directly */
+  --color-brand-navy: #062F4F;
+  --color-brand-green: #87F96E;
+  --color-brand-teal: #74D7DC;
+  --color-brand-sage: #E6EAE5;
+  --color-brand-cream: #F9FAF8;
 }
 
 @layer base {
@@ -120,6 +189,52 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Cursor pointer for all interactive elements */
+  button,
+  a,
+  [role="button"],
+  [type="button"],
+  [type="submit"],
+  [type="reset"],
+  select,
+  label[for] {
+    cursor: pointer;
+  }
+  
+  /* Better focus states with brand teal */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-highlight;
+  }
+  
+  /* Selection colors */
+  ::selection {
+    background-color: #74D7DC;
+    color: #062F4F;
+  }
+}
+
+/* Marquee animation for partners */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

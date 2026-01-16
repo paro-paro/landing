@@ -1,0 +1,369 @@
+{
+  "metadata": {
+    "title": "EthicHub - Inversiones con Impacto Real",
+    "description": "Invierte en proyectos agrícolas sostenibles de pequeños productores. Genera rentabilidad financiera, impacto social y regeneración ambiental."
+  },
+  "nav": {
+    "whatIsEthicHub": "¿Qué es EthicHub?",
+    "farmers": "Nuestros Agricultores",
+    "greenCoffee": "Café Verde",
+    "roastedCoffee": "Café Tostado",
+    "blog": "Blog",
+    "investNow": "Invertir ahora",
+    "buyCoffee": "Comprar café"
+  },
+  "hero": {
+    "badge": "Inversiones con impacto real",
+    "title": "Invierte con propósito. Genera rentabilidad. Cambia vidas.",
+    "description": "EthicHub te permite invertir en proyectos agrícolas sostenibles de pequeños productores de café, generando impacto social, rentabilidad financiera y regeneración ambiental.",
+    "cta": "Invertir ahora",
+    "stats": {
+      "projectsFunded": "Proyectos financiados",
+      "investmentReturn": "Retorno de inversión",
+      "totalCapital": "Capital total invertido",
+      "impactInvestors": "Inversores de impacto"
+    }
+  },
+  "about": {
+    "cards": {
+      "whatIs": {
+        "title": "¿Qué es EthicHub?",
+        "description": "EthicHub es una plataforma de inversión colaborativa que conecta a pequeños agricultores con financiación justa y acceso a mercados internacionales, generando rentabilidad e impacto positivo."
+      },
+      "mission": {
+        "title": "Nuestra misión",
+        "description": "Impulsar la inclusión financiera, el comercio directo y la regeneración agrícola a través de blockchain y tecnología descentralizada."
+      },
+      "whyMatters": {
+        "title": "¿Por qué importa?",
+        "description": "En el mundo, más de 25 millones de pequeños agricultores de café pagan intereses abusivos por falta de acceso al sistema financiero tradicional. En EthicHub cambiamos eso."
+      }
+    },
+    "videoTitle": "EthicHub - ¿Qué es y cómo funciona?"
+  },
+  "features": {
+    "title": "¿Por qué EthicHub?",
+    "subtitle": "Conectamos inversores con agricultores para crear un sistema financiero más justo.",
+    "items": {
+      "profitability": {
+        "title": "Rentabilidad real",
+        "description": "Inversiones productivas con retornos sostenibles."
+      },
+      "impact": {
+        "title": "Impacto social y ambiental",
+        "description": "Cada euro transforma vidas y territorios."
+      },
+      "security": {
+        "title": "Seguridad colectiva",
+        "description": "Avales colectivos que protegen tu inversión gracias a nuestro token de impacto ETHIX."
+      },
+      "transparency": {
+        "title": "Tecnología transparente",
+        "description": "Blockchain aplicada a la trazabilidad y confianza."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Cómo participar",
+    "subtitle": "Tú eliges cómo empezar a generar impacto y rentabilidad.",
+    "plans": {
+      "lending": {
+        "name": "Préstamos Colectivos",
+        "price": "8%",
+        "period": "rentabilidad anual",
+        "description": "Presta a pequeños agricultores y recibe intereses sobre tu inversión.",
+        "features": [
+          "Proyectos verificados",
+          "Trazabilidad blockchain",
+          "Impacto social directo",
+          "Préstamos a 6, 12 y 24 meses",
+          "Inversión mínima desde 50€"
+        ],
+        "cta": "Prestar ahora"
+      },
+      "staking": {
+        "name": "Avales Colectivos",
+        "price": "ETHIX",
+        "period": "token de impacto",
+        "description": "Avala los préstamos a agricultores con nuestro token ETHIX y gana recompensas.",
+        "features": [
+          "Recompensas por avalar",
+          "Protege a los prestamistas",
+          "Rendimiento con propósito",
+          "Economía regenerativa",
+          "Gobernanza de la plataforma"
+        ],
+        "cta": "Avalar ahora"
+      },
+      "coffee": {
+        "name": "Café de Impacto",
+        "price": "Directo",
+        "period": "del productor",
+        "description": "Compra café verde de especialidad directamente de nuestros agricultores.",
+        "features": [
+          "Café de especialidad",
+          "Trazabilidad desde origen",
+          "Precios justos",
+          "Envíos a toda Europa",
+          "Calidad excepcional +82 SCA"
+        ],
+        "cta": "Comprar café"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Comunidad",
+    "subtitle": "Descubre por qué miles de inversores confían en EthicHub.",
+    "items": [
+      {
+        "quote": "EthicHub es ejemplo de cómo la innovación y la tecnología pueden ser una herramienta poderosa para resolver problemas sociales y generar un impacto positivo. En Heifer Internacional México nos sentimos orgullosos de contar con un aliado como EthicHub que contribuye eficazmente al desarrollo sostenible y la inclusión financiera de las comunidades agrícolas. Con mucho entusiasmo seguiremos en colaboración con EthicHub en el futuro a favor de las familias productoras de café.",
+        "author": "Gustavo Maldonado",
+        "role": "Director Ejecutivo de Heifer México. Ethichubber desde 2023"
+      },
+      {
+        "quote": "Como inversora en EthicHub, me siento parte de una comunidad que está cambiando el mundo. Es emocionante ser testigo de cómo mis inversiones ayudan a mejorar la vida de pequeños agricultores y a promover prácticas agrícolas sostenibles. Además, saber que estoy contribuyendo a un futuro más verde me da una gran satisfacción. EthicHub me ha demostrado que es posible generar ganancias financieras y, al mismo tiempo, hacer del mundo un lugar mejor.",
+        "author": "Isabel Roselló",
+        "role": "Ethichubber desde 2022"
+      },
+      {
+        "quote": "El ETHIX es el centro del sistema de compensación, protegiendo a los prestamistas ante posibles impagos y recompensando a los participantes con intereses que compensan el riesgo que absorben. Su valor e influencia crecerán con una mayor descentralización y gobernanza, además de con el progresivo crecimiento del proyecto.",
+        "author": "Luis Alberto Rodrigo",
+        "role": "Ethichubber desde 2018"
+      },
+      {
+        "quote": "Después de invertir en más de 17 proyectos en un período de 6 años, puedo decir con plena confianza que EthicHub es una plataforma sólida para invertir éticamente y obtener excelentes rendimientos. Obtengo un retorno anual del 8% en monedas estables y los agricultores locales tienen acceso a crédito rápido, barato y confiable. Estoy muy agradecido de formar parte de EthicHub.",
+        "author": "Gary Pierre-Louis",
+        "role": "Ethichubber desde 2018"
+      }
+    ],
+    "goToSlide": "Ir a diapositiva"
+  },
+  "cta": {
+    "title": "Únete a la comunidad de impacto",
+    "subtitle": "Comienza a invertir hoy y sé parte del cambio.",
+    "invest": "Invertir ahora",
+    "newsletter": "Suscríbete a la newsletter"
+  },
+  "footer": {
+    "tagline": "Inversiones con impacto real.",
+    "copyright": "Todos los derechos reservados.",
+    "slogan": "Conectamos personas, cosechamos riqueza.",
+    "disclaimer": "La inversión en criptoactivos no está regulada, puede no ser adecuada para inversores minoristas y perderse la totalidad del importe invertido. Es importante leer y comprender los riesgos de esta inversión que se explican detalladamente",
+    "disclaimerLink": "en esta ubicación.",
+    "sections": {
+      "company": "Compañía",
+      "resources": "Recursos",
+      "platforms": "Plataformas",
+      "legal": "Legal"
+    },
+    "links": {
+      "blog": "Blog",
+      "forum": "Forum",
+      "faqs": "FAQs",
+      "documentation": "Documentación",
+      "glossary": "Glosario",
+      "brandKit": "Guía de estilo",
+      "lending": "Préstamos Colectivos",
+      "staking": "Avales Colectivos",
+      "greenCoffeeShop": "Café Verde Shop",
+      "roastedCoffeeShop": "Café Tostado Shop",
+      "terms": "Términos y condiciones",
+      "privacy": "Política de privacidad",
+      "cookies": "Política de cookies",
+      "risks": "Riesgos"
+    },
+    "newsletter": {
+      "title": "Suscríbete a la newsletter",
+      "description": "Recibe las últimas noticias, actualizaciones y oportunidades de inversión directamente en tu correo.",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "submit": "Suscribirme",
+      "submitting": "Enviando...",
+      "success": "¡Te has suscrito correctamente!",
+      "error": "Ha ocurrido un error. Inténtalo de nuevo.",
+      "privacyNote": "Al suscribirte estás aceptando nuestra",
+      "privacyLink": "política de privacidad."
+    }
+  },
+  "coffee": {
+    "badge": "Café verde de especialidad",
+    "title": "Café EthicHub",
+    "subtitle": "Café verde de especialidad con impacto social y trazabilidad real",
+    "description1": "EthicHub ofrece café verde de especialidad producido principalmente en la región del Soconusco, en Chiapas (México), un origen reconocido por su excepcional calidad y condiciones ideales de cultivo. También contamos con café producido en Colombia, Brasil y Honduras.",
+    "description2": "Nuestros granos de café verde se cultivan de forma sostenible por comunidades cafetaleras que se benefician directamente de cada compra, donde el 50% del beneficio vuelve a los productores para mejorar sus tierras, su calidad de vida y la conservación del entorno.",
+    "contactUs": "Contáctanos",
+    "buyCoffee": "Comprar café",
+    "features": {
+      "specialty": {
+        "title": "Café de especialidad",
+        "description": "Entre 82 y 90 SCA."
+      },
+      "smallFarmers": {
+        "title": "Pequeños agricultores",
+        "description": "Producido en 2-5 hectáreas."
+      },
+      "impact": {
+        "title": "Café de impacto",
+        "description": "Precio y trato digno a agricultores y sus familias."
+      },
+      "origin": {
+        "title": "Café de origen",
+        "description": "México, Colombia, Brasil y Honduras."
+      }
+    },
+    "marketplace": {
+      "title": "Café Verde Online Shop",
+      "subtitle": "Compra café verde en formato 5 kg, listo para enviar a toda Europa",
+      "description": "Nuestro nuevo marketplace está pensado para quienes buscan comprar café verde online de forma rápida, flexible y sin necesidad de adquirir sacos completos.",
+      "idealFor": "Ideal para:",
+      "buyerTypes": [
+        "Pequeños tostadores.",
+        "Microtostadores.",
+        "Escuelas de barismo.",
+        "Profesionales que quieren probar diferentes cafés verdes.",
+        "Tostadores que necesitan reposición rápida."
+      ],
+      "downloadCatalog": "Descargar catálogo"
+    },
+    "specialty": {
+      "title": "Café de especialidad",
+      "subtitle": "Calidad excepcional +82 SCA",
+      "description1": "Nuestros cafés tienen puntuaciones superiores a 82 puntos SCA, garantizando una calidad excepcional.",
+      "description2": "Los distintos orígenes, microclimas y condiciones de cultivo de las regiones donde trabajamos dan lugar a cafés con perfiles sensoriales únicos, excelente equilibrio, acidez definida y gran complejidad en taza.",
+      "description3": "Explora nuestro catálogo anual de café verde de especialidad. Cada origen ofrece perfiles únicos gracias a su tierra, clima y métodos de cultivo."
+    },
+    "variety": {
+      "title": "Compra al por mayor",
+      "subtitle": "Para tostadores y distribuidores",
+      "description": "Si estás buscando comprar café verde al por mayor, ofrecemos sacos completos y ventas en grandes volúmenes para tostadores y distribuidores. Contáctanos para conocer la disponibilidad de microlotes, cafés de temporada y orígenes específicos.",
+      "features": [
+        "Microlotes exclusivos.",
+        "Variedades arábica de alta calidad.",
+        "Café verde con certificaciones y trazabilidad completa."
+      ]
+    },
+    "communities": {
+      "title": "Nuestros Agricultores",
+      "subtitle": "Apoya directamente a pequeños productores de café verde.",
+      "description1": "Trabajamos con comunidades agrícolas excluidas del sistema financiero tradicional, ofreciéndoles acceso a financiación justa y a mercados internacionales.",
+      "description2": "Gracias a este modelo, los productores reciben mejores precios y pueden exportar su café verde de especialidad sin intermediarios.",
+      "description3": "Cada lote de café que compras contribuye a mejorar prácticas agrícolas, regenerar suelos y fortalecer economías locales.",
+      "learnMore": "Saber más"
+    },
+    "contact": {
+      "title": "Contacto Café Verde",
+      "description": "¿Interesado en nuestro café verde de especialidad? Déjanos tus datos y nos pondremos en contacto contigo.",
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono",
+      "phonePlaceholder": "+34 600 000 000",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos qué tipo de café buscas, cantidades aproximadas, etc.",
+      "submit": "Enviar solicitud",
+      "submitting": "Enviando...",
+      "success": "¡Solicitud enviada correctamente!",
+      "error": "Ha ocurrido un error. Inténtalo de nuevo.",
+      "privacyNote": "Al enviar la solicitud estás aceptando nuestra",
+      "privacyLink": "política de privacidad."
+    }
+  },
+  "farmers": {
+    "badge": "Agricultura sostenible",
+    "title": "Somos Agricultores",
+    "subtitle": "de EthicHub",
+    "description": "Tus préstamos ayudan a financiar nuestras actividades productivas y de exportación. Conseguimos una mejor calidad y precio por nuestros productos al mismo tiempo que conservamos nuestra tierra, fuente de sustento y riqueza.",
+    "meetFarmers": "Conoce a nuestros agricultores",
+    "startLending": "Invertir ahora",
+    "originators": {
+      "title": "Originadores",
+      "subtitle": "Conoce a las organizaciones que hacen posible nuestro café de especialidad.",
+      "originator": "originador",
+      "originators": "originadores",
+      "viewProfile": "Ver perfil"
+    },
+    "greenCoffee": {
+      "title": "Café Verde",
+      "subtitle": "de especialidad",
+      "description": "Cultivado de forma sostenible por pequeños productores, cuyo trabajo da vida a algunos de los mejores cafés del mundo. El clima y la geografía aportan a los granos un cuerpo distintivo y una acidez agradable, dando como resultado una calidad excepcional. Cada lote es cuidadosamente seleccionado y mantiene una trazabilidad completa desde el origen. Nuestros cafés obtienen puntuaciones de cata superiores a 82 puntos bajo los estándares de la SCA.",
+      "learnMore": "Saber más"
+    },
+    "ethix": {
+      "title": "Token ETHIX",
+      "subtitle": "de impacto",
+      "description": "ETHIX es un token de impacto que refleja la confianza en nuestros agricultores y ayuda a ofrecer garantías para sus préstamos. Para reforzar la seguridad del sistema, el 50% de todo el suministro de ETHIX se mantiene bloqueado dentro del sistema de compensación. De esta forma, se incrementa la protección ante imprevistos y se fortalece la sostenibilidad del modelo.",
+      "learnMore": "Saber más"
+    },
+    "testimonials": [
+      {
+        "quote": "Trabajar con EthicHub ha sido transformador para muchos productores de nuestro programa. Hay historias de pequeños agricultores que antes eran invisibles y que hoy cuentan con más libertad financiera para gestionar sus fincas. No solo han mejorado sus vidas al acceder a microfinanciación; también ha mejorado la calidad de los cafés que producen. Lo más valioso ha sido ver cómo crecen en confianza y en capacidades año tras año. Ha sido un privilegio colaborar con EthicHub durante más de 3 años.",
+        "author": "Boram Um",
+        "role": "Productor de café, tostador, barista y Q-grader.\nOriginador EthicHub desde 2021.",
+        "location": "Minas Gerais y Espirito Santo, Brasil"
+      },
+      {
+        "quote": "Agradecemos profundamente el apoyo recibido, que nos ha permitido hacer realidad nuestra pasión por producir café de especialidad. Gracias a este impulso, hemos podido mejorar nuestros procesos y cuidar cada detalle, desde la cosecha hasta el beneficio. Seguimos trabajando con compromiso para ofrecer una calidad cada vez mayor y generar un impacto positivo en nuestra comunidad.",
+        "author": "Neri Ortiz",
+        "role": "Productor EthicHub desde 2022",
+        "location": "San José Ixtepec, Chiapas, México"
+      },
+      {
+        "quote": "Estamos muy agradecidas a toda la comunidad de Ethichubbers por su apoyo. El café y el servicio son nuestras pasiones, y gracias a iniciativas como esta podemos seguir impulsando la sostenibilidad de las familias cafetaleras. Este respaldo nos permite continuar trabajando con dedicación y fortalecer nuestro proyecto día a día. Seguimos comprometidas con cuidar el origen y generar oportunidades reales para nuestras comunidades.",
+        "author": "Delmi & Nicolle Regalado",
+        "role": "Comercializadora y Exportadora de café en EthicHub desde 2023",
+        "location": "Finca La Fortuna, Honduras"
+      }
+    ],
+    "detail": {
+      "back": "Volver",
+      "originatorSince": "Originador desde",
+      "specialties": "Especialidades",
+      "endorseOriginator": "Invertir ahora"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Descubre artículos sobre inversiones con impacto, café, agricultura sostenible y cómo tu dinero puede generar un cambio positivo.",
+    "noArticles": "No hay artículos disponibles todavía.",
+    "categories": "Categorías",
+    "noCategories": "No hay categorías disponibles.",
+    "backToBlog": "Volver al blog",
+    "seeMoreArticles": "Ver más artículos",
+    "postNotFound": "Post no encontrado",
+    "article": "artículo",
+    "articles": "artículos",
+    "allCategories": "Todas las categorías",
+    "taggedWith": "Todos los artículos etiquetados con"
+  },
+  "glossary": {
+    "title": "Glosario",
+    "description": "Términos y conceptos clave del ecosistema blockchain, DeFi y EthicHub.",
+    "searchPlaceholder": "Buscar término o concepto...",
+    "clearSearch": "Limpiar búsqueda",
+    "noResults": "No se encontraron resultados para",
+    "showing": "Mostrando",
+    "of": "de",
+    "terms": "términos"
+  },
+  "legal": {
+    "terms": {
+      "title": "Términos y condiciones"
+    },
+    "privacy": {
+      "title": "Política de privacidad"
+    },
+    "cookies": {
+      "title": "Política de cookies"
+    }
+  },
+  "common": {
+    "learnMore": "Saber más",
+    "required": "*"
+  },
+  "languageSwitcher": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English"
+  }
+}

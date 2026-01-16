@@ -1,0 +1,369 @@
+{
+  "metadata": {
+    "title": "EthicHub - Investments with Real Impact",
+    "description": "Invest in sustainable agricultural projects from small producers. Generate financial returns, social impact, and environmental regeneration."
+  },
+  "nav": {
+    "whatIsEthicHub": "What is EthicHub?",
+    "farmers": "Our Farmers",
+    "greenCoffee": "Green Coffee",
+    "roastedCoffee": "Roasted Coffee",
+    "blog": "Blog",
+    "investNow": "Invest now",
+    "buyCoffee": "Buy coffee"
+  },
+  "hero": {
+    "badge": "Real impact investments",
+    "title": "Invest with purpose. Earn returns. Change lives.",
+    "description": "EthicHub allows you to invest in sustainable agricultural projects from small coffee producers, generating social impact, financial returns, and environmental regeneration.",
+    "cta": "Invest now",
+    "stats": {
+      "projectsFunded": "Projects funded",
+      "investmentReturn": "Investment return",
+      "totalCapital": "Total capital invested",
+      "impactInvestors": "Impact investors"
+    }
+  },
+  "about": {
+    "cards": {
+      "whatIs": {
+        "title": "What is EthicHub?",
+        "description": "EthicHub is a collaborative investment platform that connects small farmers with fair financing and access to international markets, generating profitability and positive impact."
+      },
+      "mission": {
+        "title": "Our mission",
+        "description": "To drive financial inclusion, direct trade, and agricultural regeneration through blockchain and decentralized technology."
+      },
+      "whyMatters": {
+        "title": "Why does it matter?",
+        "description": "Worldwide, more than 25 million small coffee farmers pay abusive interest rates due to lack of access to the traditional financial system. At EthicHub we change that."
+      }
+    },
+    "videoTitle": "EthicHub - What is it and how does it work?"
+  },
+  "features": {
+    "title": "Why EthicHub?",
+    "subtitle": "We bridge the gap between investors and farmers to enhance financial equity.",
+    "items": {
+      "profitability": {
+        "title": "Real profitability",
+        "description": "Productive investments with sustainable returns."
+      },
+      "impact": {
+        "title": "Social and environmental impact",
+        "description": "Every euro transforms lives and territories."
+      },
+      "security": {
+        "title": "Collective security",
+        "description": "Crowd collaterals that protect your investment thanks to our impact token ETHIX."
+      },
+      "transparency": {
+        "title": "Transparent technology",
+        "description": "Blockchain applied to traceability and trust."
+      }
+    }
+  },
+  "pricing": {
+    "title": "How to participate",
+    "subtitle": "You choose how to start generating impact and profitability.",
+    "plans": {
+      "lending": {
+        "name": "Crowd Lending",
+        "price": "8%",
+        "period": "annual return",
+        "description": "Lend to small farmers and earn interest on your investment.",
+        "features": [
+          "Verified projects",
+          "Blockchain traceability",
+          "Direct social impact",
+          "Loans for 6, 12 and 24 months",
+          "Minimum investment from 50€"
+        ],
+        "cta": "Lend now"
+      },
+      "staking": {
+        "name": "Crowd Collateral",
+        "price": "ETHIX",
+        "period": "impact token",
+        "description": "Back farmer loans with our ETHIX token and earn rewards.",
+        "features": [
+          "Rewards for staking",
+          "Protect lenders",
+          "Purpose-driven returns",
+          "Regenerative economy",
+          "Platform governance"
+        ],
+        "cta": "Add collateral now"
+      },
+      "coffee": {
+        "name": "Impact Coffee",
+        "price": "Direct",
+        "period": "from producer",
+        "description": "Buy specialty green coffee directly from our farmers.",
+        "features": [
+          "Specialty coffee",
+          "Traceability from origin",
+          "Fair prices",
+          "Shipping across Europe",
+          "Exceptional quality +82 SCA"
+        ],
+        "cta": "Buy coffee"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Community",
+    "subtitle": "Discover why thousands of investors trust EthicHub.",
+    "items": [
+      {
+        "quote": "EthicHub is an example of how innovation and technology can be a powerful tool to solve social problems and generate positive impact. At Heifer International Mexico we are proud to have an ally like EthicHub that effectively contributes to sustainable development and financial inclusion of agricultural communities. With great enthusiasm we will continue collaborating with EthicHub in the future for the benefit of coffee-producing families.",
+        "author": "Gustavo Maldonado",
+        "role": "Executive Director of Heifer Mexico. Ethichubber since 2023"
+      },
+      {
+        "quote": "As an investor in EthicHub, I feel part of a community that is changing the world. It's exciting to witness how my investments help improve the lives of small farmers and promote sustainable agricultural practices. Also, knowing that I'm contributing to a greener future gives me great satisfaction. EthicHub has shown me that it's possible to generate financial gains while making the world a better place.",
+        "author": "Isabel Roselló",
+        "role": "Ethichubber since 2022"
+      },
+      {
+        "quote": "ETHIX is at the center of the compensation system, protecting lenders against potential defaults and rewarding participants with interest that compensates for the risk they absorb. Its value and influence will grow with greater decentralization and governance, as well as with the progressive growth of the project.",
+        "author": "Luis Alberto Rodrigo",
+        "role": "Ethichubber since 2018"
+      },
+      {
+        "quote": "After investing in more than 17 projects over a 6-year period, I can confidently say that EthicHub is a solid platform for ethical investing with excellent returns. I get an 8% annual return in stablecoins and local farmers have access to fast, cheap, and reliable credit. I am always very grateful to be able to use EthicHub.",
+        "author": "Gary Pierre-Louis",
+        "role": "Ethichubber since 2018"
+      }
+    ],
+    "goToSlide": "Go to slide"
+  },
+  "cta": {
+    "title": "Join the impact community",
+    "subtitle": "Start investing today and be part of the change.",
+    "invest": "Invest now",
+    "newsletter": "Subscribe to newsletter"
+  },
+  "footer": {
+    "tagline": "Real impact investments.",
+    "copyright": "All rights reserved.",
+    "slogan": "Connecting people, harvesting wealth.",
+    "disclaimer": "Investing in crypto assets is not regulated, may not be suitable for retail investors, and there is the risk of losing the total amount invested. To thoroughly understand the risks associated with this investment, please visit",
+    "disclaimerLink": "our risk section.",
+    "sections": {
+      "company": "Company",
+      "resources": "Resources",
+      "platforms": "Platforms",
+      "legal": "Legal"
+    },
+    "links": {
+      "blog": "Blog",
+      "forum": "Forum",
+      "faqs": "FAQs",
+      "documentation": "Documentation",
+      "glossary": "Glossary",
+      "brandKit": "Brand kit",
+      "lending": "Crowd Lending",
+      "staking": "Crowd Collateral",
+      "greenCoffeeShop": "Green Coffee Shop",
+      "roastedCoffeeShop": "Roasted Coffee Shop",
+      "terms": "Terms and conditions",
+      "privacy": "Privacy policy",
+      "cookies": "Cookies policy",
+      "risks": "Risks"
+    },
+    "newsletter": {
+      "title": "Subscribe to newsletter",
+      "description": "Receive the latest news, updates, and investment opportunities directly in your email.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@email.com",
+      "submit": "Subscribe",
+      "submitting": "Sending...",
+      "success": "You have successfully subscribed!",
+      "error": "An error occurred. Please try again.",
+      "privacyNote": "By subscribing you accept our",
+      "privacyLink": "privacy policy."
+    }
+  },
+  "coffee": {
+    "badge": "Specialty green coffee",
+    "title": "EthicHub Coffee",
+    "subtitle": "Specialty green coffee with social impact and real traceability",
+    "description1": "EthicHub offers specialty green coffee produced mainly in the Soconusco region, in Chiapas (Mexico), an origin recognized for its exceptional quality and ideal growing conditions. We also have coffee produced in Colombia, Brazil and Honduras.",
+    "description2": "Our green coffee beans are sustainably grown by coffee communities that directly benefit from each purchase, where 50% of the profit goes back to producers to improve their land, quality of life, and environmental conservation.",
+    "contactUs": "Contact us",
+    "buyCoffee": "Buy coffee",
+    "features": {
+      "specialty": {
+        "title": "Specialty coffee",
+        "description": "Between 82 and 90 SCA."
+      },
+      "smallFarmers": {
+        "title": "Small farmers",
+        "description": "Produced on 2-5 hectares."
+      },
+      "impact": {
+        "title": "Impact coffee",
+        "description": "Fair price and treatment for farmers and their families."
+      },
+      "origin": {
+        "title": "Origin coffee",
+        "description": "Mexico, Colombia, Brazil and Honduras."
+      }
+    },
+    "marketplace": {
+      "title": "Green Coffee Online Shop",
+      "subtitle": "Buy green coffee in 5 kg format, ready to ship across Europe",
+      "description": "Our new marketplace is designed for those looking to buy green coffee online quickly, flexibly, and without the need to purchase full bags.",
+      "idealFor": "Ideal for:",
+      "buyerTypes": [
+        "Small roasters.",
+        "Micro-roasters.",
+        "Barista schools.",
+        "Professionals who want to try different green coffees.",
+        "Roasters needing quick replenishment."
+      ],
+      "downloadCatalog": "Download catalog"
+    },
+    "specialty": {
+      "title": "Specialty coffee",
+      "subtitle": "Exceptional quality +82 SCA",
+      "description1": "Our coffees have scores above 82 SCA points, guaranteeing exceptional quality.",
+      "description2": "The different origins, microclimates, and growing conditions of the regions where we work result in coffees with unique sensory profiles, excellent balance, defined acidity, and great complexity in the cup.",
+      "description3": "Explore our annual catalog of specialty green coffee. Each origin offers unique profiles thanks to its soil, climate, and cultivation methods."
+    },
+    "variety": {
+      "title": "Wholesale",
+      "subtitle": "For roasters and distributors",
+      "description": "If you're looking to buy wholesale green coffee, we offer full bags and high-volume sales for roasters and distributors. Contact us to learn about the availability of micro-lots, seasonal coffees, and specific origins.",
+      "features": [
+        "Exclusive micro-lots.",
+        "High-quality arabica varieties.",
+        "Green coffee with certifications and complete traceability."
+      ]
+    },
+    "communities": {
+      "title": "Our Farmers",
+      "subtitle": "Directly support small green coffee producers.",
+      "description1": "We work with agricultural communities excluded from the traditional financial system, offering them access to fair financing and international markets.",
+      "description2": "Thanks to this model, producers receive better prices and can export their specialty green coffee without intermediaries.",
+      "description3": "Each batch of coffee you buy contributes to improving agricultural practices, regenerating soils, and strengthening local economies.",
+      "learnMore": "Learn more"
+    },
+    "contact": {
+      "title": "Green Coffee Contact",
+      "description": "Interested in our specialty green coffee? Leave us your details and we'll get in touch with you.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "phonePlaceholder": "+34 600 000 000",
+      "message": "Message",
+      "messagePlaceholder": "Tell us what type of coffee you're looking for, approximate quantities, etc.",
+      "submit": "Send request",
+      "submitting": "Sending...",
+      "success": "Request sent successfully!",
+      "error": "An error occurred. Please try again.",
+      "privacyNote": "By sending the request you accept our",
+      "privacyLink": "privacy policy."
+    }
+  },
+  "farmers": {
+    "badge": "Sustainable farming",
+    "title": "We are Farmers",
+    "subtitle": "of EthicHub",
+    "description": "Your loans help finance our productive and export activities. We achieve better quality and prices for our products while preserving our land, source of livelihood and wealth.",
+    "meetFarmers": "Meet our farmers",
+    "startLending": "Invest now",
+    "originators": {
+      "title": "Originators",
+      "subtitle": "Meet the organizations that make our specialty coffee possible.",
+      "originator": "originator",
+      "originators": "originators",
+      "viewProfile": "View profile"
+    },
+    "greenCoffee": {
+      "title": "Green Coffee",
+      "subtitle": "specialty",
+      "description": "Sustainably grown by small producers whose work helps bring some of the world's best coffees to life. Climate and geography give the beans a distinctive body and a pleasant acidity, resulting in exceptional quality. Each lot is carefully selected and fully traceable from origin. Our coffees achieve cupping scores above 82 points under SCA standards.",
+      "learnMore": "Learn more"
+    },
+    "ethix": {
+      "title": "ETHIX Token",
+      "subtitle": "impact",
+      "description": "ETHIX is an impact token that reflects trust in our farmers and helps provide guarantees for their loans. To strengthen the system’s security, 50% of the total ETHIX supply is staked within the Compensation System. This increases protection against unexpected events and helps reinforce the long-term sustainability of the model.",
+      "learnMore": "Learn more"
+    },
+    "testimonials": [
+      {
+        "quote": "Working with EthicHub has been transformative for many producers in our program. There are countless stories of small farmers who were once unseen and who now have greater financial freedom to run their farms. It has improved their lives through access to microfinance, and it has also raised the quality of the coffees they produce. Most importantly, we've seen their confidence and capabilities grow year after year. It's been a privilege working with EthicHub for over 3 years.",
+        "author": "Boram Um",
+        "role": "Coffee producer, roaster, barista, and Q-grader.\nEthicHub Originator since 2021.",
+        "location": "Minas Gerais and Espirito Santo, Brazil"
+      },
+      {
+        "quote": "We’re deeply grateful for the support we’ve received, which has allowed us to turn our passion for producing specialty coffee into reality. With this boost, we’ve been able to refine our processes and care for every detail, from harvest through processing. We’ll keep working with dedication to deliver ever-higher quality and create a positive impact in our community.",
+        "author": "Neri Ortiz",
+        "role": "EthicHub Producer since 2022",
+        "location": "San José Ixtepec, Chiapas, Mexico"
+      },
+      {
+        "quote": "We’re incredibly grateful to the entire Ethichubbers community for your support. Coffee and service are our passions, and thanks to initiatives like this we can keep strengthening the sustainability of coffee-growing families. This backing helps us continue working with dedication and improving our project day by day. We remain committed to honoring the origin and creating real opportunities for our communities.",
+        "author": "Delmi & Nicolle Regalado",
+        "role": "Coffee Marketer and Exporter at EthicHub since 2023",
+        "location": "Finca La Fortuna, Honduras"
+      }
+    ],
+    "detail": {
+      "back": "Back",
+      "originatorSince": "Originator since",
+      "specialties": "Specialties",
+      "endorseOriginator": "Invest now"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Discover articles about impact investments, coffee, sustainable agriculture, and how your money can generate positive change.",
+    "noArticles": "No articles available yet.",
+    "categories": "Categories",
+    "noCategories": "No categories available.",
+    "backToBlog": "Back to blog",
+    "seeMoreArticles": "See more articles",
+    "postNotFound": "Post not found",
+    "article": "article",
+    "articles": "articles",
+    "allCategories": "All categories",
+    "taggedWith": "All articles tagged with"
+  },
+  "glossary": {
+    "title": "Glossary",
+    "description": "Key terms and concepts from the blockchain, DeFi and EthicHub ecosystem.",
+    "searchPlaceholder": "Search term or concept...",
+    "clearSearch": "Clear search",
+    "noResults": "No results found for",
+    "showing": "Showing",
+    "of": "of",
+    "terms": "terms"
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms and conditions"
+    },
+    "privacy": {
+      "title": "Privacy policy"
+    },
+    "cookies": {
+      "title": "Cookies policy"
+    }
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "required": "*"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English"
+  }
+}
