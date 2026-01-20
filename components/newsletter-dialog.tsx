@@ -5,7 +5,6 @@ import Link from "next/link"
 import { useLocale, useTranslations } from "next-intl"
 import { toast } from "sonner"
 import { Loader2 } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -39,7 +38,7 @@ export function NewsletterDialog({ trigger }: NewsletterDialogProps) {
     const email = formData.get("email")?.toString() ?? ""
 
     const [result] = await Promise.all([
-      submitNewsletterForm({ name, email }),
+      submitNewsletterForm({ name, email, language: locale }),
       new Promise((resolve) => setTimeout(resolve, 250)),
     ])
 

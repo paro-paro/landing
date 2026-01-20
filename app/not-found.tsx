@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "404 - Página no encontrada | Page not found | EthicHub",
+  title: "404 - Página no encontrada | Page not found",
   description: "La página que buscas no existe. The page you are looking for does not exist.",
 }
 

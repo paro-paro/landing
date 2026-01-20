@@ -1,8 +1,12 @@
 "use server"
 
-const ACTIVECAMPAIGN_URL = process.env.ACTIVECAMPAIGN_URL
-const NEWSLETTER_FORM_ID = process.env.ACTIVECAMPAIGN_NEWSLETTER_FORM_ID
-const CONTACT_FORM_ID = process.env.ACTIVECAMPAIGN_CONTACT_FORM_ID
+const API_URL = ''
+const API_KEY = ''
+const NEWSLETTER_LIST_ID = '54'
+const CONTACT_LIST_ID = '9'
+const MESSAGE_FIELD_ID = ''
+
+const LANGUAGE_FIELD_ID = '75'
 
 type SubmitResult = {
   success: boolean
@@ -12,6 +16,7 @@ type SubmitResult = {
 type NewsletterData = {
   name: string
   email: string
+  language?: string
 }
 
 type ContactData = {
@@ -21,44 +26,64 @@ type ContactData = {
   message?: string
 }
 
-export async function submitNewsletterForm(data: NewsletterData): Promise<SubmitResult> {
-  if (!ACTIVECAMPAIGN_URL || !NEWSLETTER_FORM_ID) {
-    return { success: false, error: "Newsletter form not configured" }
+type ContactPayload = {
+  contact: {
+    email: string
+    firstName?: string
+    lastName?: string
+    phone?: string
+    fieldValues?: Array<{ field: string; value: string }>
+  }
+}
+
+async function syncContact(payload: ContactPayload, listId?: string): Promise<SubmitResult> {
+  if (!API_URL || !API_KEY) {
+    return { success: false, error: "ActiveCampaign API not configured" }
   }
 
-  const formData = new URLSearchParams()
-
-  // ActiveCampaign required fields
-  formData.append("u", NEWSLETTER_FORM_ID)
-  formData.append("f", NEWSLETTER_FORM_ID)
-  formData.append("s", "")
-  formData.append("c", "0")
-  formData.append("m", "0")
-  formData.append("act", "sub")
-  formData.append("v", "2")
-
-  // Form fields - field names may need adjustment based on your AC form setup
-  formData.append("fullname", data.name)
-  formData.append("email", data.email)
-
   try {
-    const response = await fetch(ACTIVECAMPAIGN_URL, {
+    // 1. Create or update the contact
+    const syncResponse = await fetch(`${API_URL}/api/3/contact/sync`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Api-Token": API_KEY,
+        "Content-Type": "application/json",
       },
-      body: formData.toString(),
+      body: JSON.stringify(payload),
     })
 
-    if (!response.ok) {
-      return { success: false, error: `HTTP ${response.status}` }
+    if (!syncResponse.ok) {
+      const errorData = await syncResponse.json().catch(() => ({}))
+      return {
+        success: false,
+        error: errorData.message || `HTTP ${syncResponse.status}`,
+      }
     }
 
-    const text = await response.text()
+    const syncData = await syncResponse.json()
+    const contactId = syncData.contact?.id
 
-    // ActiveCampaign returns HTML - check for error indicators
-    if (text.includes("error") || text.includes("Error")) {
-      return { success: false, error: "Submission rejected" }
+    // 2. Subscribe to list if listId provided
+    if (listId && contactId) {
+      const listResponse = await fetch(`${API_URL}/api/3/contactLists`, {
+        method: "POST",
+        headers: {
+          "Api-Token": API_KEY,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contactList: {
+            list: listId,
+            contact: contactId,
+            status: 1, // 1 = subscribed
+          },
+        }),
+      })
+
+      if (!listResponse.ok) {
+        // Contact created but list subscription failed - still consider partial success
+        console.error("Failed to subscribe contact to list")
+      }
     }
 
     return { success: true }
@@ -70,52 +95,59 @@ export async function submitNewsletterForm(data: NewsletterData): Promise<Submit
   }
 }
 
-export async function submitContactForm(data: ContactData): Promise<SubmitResult> {
-  if (!ACTIVECAMPAIGN_URL || !CONTACT_FORM_ID) {
-    return { success: false, error: "Contact form not configured" }
+function splitName(fullName: string): { firstName: string; lastName?: string } {
+  const parts = fullName.trim().split(/\s+/)
+  if (parts.length === 1) {
+    return { firstName: parts[0] }
   }
+  return {
+    firstName: parts[0],
+    lastName: parts.slice(1).join(" "),
+  }
+}
 
-  const formData = new URLSearchParams()
+export async function submitNewsletterForm(data: NewsletterData): Promise<SubmitResult> {
+  const { firstName, lastName } = splitName(data.name)
 
-  // ActiveCampaign required fields
-  formData.append("u", CONTACT_FORM_ID)
-  formData.append("f", CONTACT_FORM_ID)
-  formData.append("s", "")
-  formData.append("c", "0")
-  formData.append("m", "0")
-  formData.append("act", "sub")
-  formData.append("v", "2")
+  const fieldValues: Array<{ field: string; value: string }> = []
 
-  // Form fields - field names may need adjustment based on your AC form setup
-  formData.append("fullname", data.name)
-  formData.append("email", data.email)
-  if (data.phone) formData.append("phone", data.phone)
-  if (data.message) formData.append("field[1]", data.message) // Custom field - adjust ID as needed
-
-  try {
-    const response = await fetch(ACTIVECAMPAIGN_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: formData.toString(),
+  if (data.language && LANGUAGE_FIELD_ID) {
+    fieldValues.push({
+      field: LANGUAGE_FIELD_ID,
+      value: data.language,
     })
-
-    if (!response.ok) {
-      return { success: false, error: `HTTP ${response.status}` }
-    }
-
-    const text = await response.text()
-
-    if (text.includes("error") || text.includes("Error")) {
-      return { success: false, error: "Submission rejected" }
-    }
-
-    return { success: true }
-  } catch (error) {
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : "Unknown error",
-    }
   }
+
+  const payload: ContactPayload = {
+    contact: {
+      email: data.email,
+      firstName,
+      ...(lastName && { lastName }),
+      ...(fieldValues.length > 0 && { fieldValues }),
+    },
+  }
+
+  return syncContact(payload, NEWSLETTER_LIST_ID)
+}
+
+export async function submitContactForm(data: ContactData): Promise<SubmitResult> {
+  const { firstName, lastName } = splitName(data.name)
+
+  const fieldValues: Array<{ field: string; value: string }> = []
+
+  if (data.message && MESSAGE_FIELD_ID) {
+    fieldValues.push({ field: MESSAGE_FIELD_ID, value: data.message })
+  }
+
+  const payload: ContactPayload = {
+    contact: {
+      email: data.email,
+      firstName,
+      ...(lastName && { lastName }),
+      ...(data.phone && { phone: data.phone }),
+      ...(fieldValues.length > 0 && { fieldValues }),
+    },
+  }
+
+  return syncContact(payload, CONTACT_LIST_ID)
 }
