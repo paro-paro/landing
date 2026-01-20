@@ -1,12 +1,13 @@
 "use server"
 
-const API_URL = ''
-const API_KEY = ''
-const NEWSLETTER_LIST_ID = '54'
-const CONTACT_LIST_ID = '9'
-const MESSAGE_FIELD_ID = ''
-
-const LANGUAGE_FIELD_ID = '75'
+const API_URL = process.env.ACTIVE_CAMPAIGN_API_URL
+const API_KEY = process.env.ACTIVE_CAMPAIGN_API_KEY
+const LIST_ID_NEWSLETTER = '54'
+const LIST_ID_MARKETING = '23'
+const LIST_ID_GREEN_COFFEE = '9'
+const FIELD_ID_LANGUAGE = '75'
+const FIELD_ID_GREEN_COFFEE_MESSAGE = '3'
+const TAG_ID_GREEN_COFFEE = '132'
 
 type SubmitResult = {
   success: boolean
@@ -16,40 +17,46 @@ type SubmitResult = {
 type NewsletterData = {
   name: string
   email: string
-  language?: string
+  language: string
 }
 
 type ContactData = {
   name: string
   email: string
-  phone?: string
+  phone: string
+  language: string
   message?: string
 }
 
-type ContactPayload = {
-  contact: {
-    email: string
-    firstName?: string
-    lastName?: string
-    phone?: string
-    fieldValues?: Array<{ field: string; value: string }>
-  }
+type Contact = {
+  email: string
+  firstName?: string
+  lastName?: string
+  phone?: string
+  fieldValues?: Array<{
+    field: string;
+    value: string
+  }>
 }
 
-async function syncContact(payload: ContactPayload, listId?: string): Promise<SubmitResult> {
+type SyncOptions = {
+  listIds?: string[]
+  tagIds?: string[]
+}
+
+async function syncContact(contact: Contact, options?: SyncOptions): Promise<SubmitResult> {
   if (!API_URL || !API_KEY) {
     return { success: false, error: "ActiveCampaign API not configured" }
   }
 
+  const headers = { "Api-Token": API_KEY, "Content-Type": "application/json" }
+
   try {
-    // 1. Create or update the contact
+    // 1. Create/update contact
     const syncResponse = await fetch(`${API_URL}/api/3/contact/sync`, {
+      headers,
       method: "POST",
-      headers: {
-        "Api-Token": API_KEY,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ contact }),
     })
 
     if (!syncResponse.ok) {
@@ -61,31 +68,51 @@ async function syncContact(payload: ContactPayload, listId?: string): Promise<Su
     }
 
     const syncData = await syncResponse.json()
-    const contactId = syncData.contact?.id
+    const contactId = syncData.contact?.id as string | undefined
 
-    // 2. Subscribe to list if listId provided
-    if (listId && contactId) {
-      const listResponse = await fetch(`${API_URL}/api/3/contactLists`, {
-        method: "POST",
-        headers: {
-          "Api-Token": API_KEY,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          contactList: {
-            list: listId,
-            contact: contactId,
-            status: 1, // 1 = subscribed
-          },
-        }),
-      })
+    if (!contactId) {
+      return { success: false, error: "No contact ID returned" }
+    }
 
-      if (!listResponse.ok) {
-        // Contact created but list subscription failed - still consider partial success
-        console.error("Failed to subscribe contact to list")
+    // 2. Subscribe to lists and add tags (parallel)
+    const promises: Promise<Response>[] = []
+
+    if (options?.listIds?.length) {
+      for (const listId of options.listIds) {
+        promises.push(
+          fetch(`${API_URL}/api/3/contactLists`, {
+            method: "POST",
+            headers,
+            body: JSON.stringify({
+              contactList: {
+                list: listId,
+                contact: contactId,
+                status: 1,
+              },
+            }),
+          })
+        )
       }
     }
 
+    if (options?.tagIds?.length) {
+      for (const tagId of options.tagIds) {
+        promises.push(
+          fetch(`${API_URL}/api/3/contactTags`, {
+            method: "POST",
+            headers,
+            body: JSON.stringify({
+              contactTag: {
+                contact: contactId,
+                tag: tagId,
+              },
+            }),
+          })
+        )
+      }
+    }
+
+    await Promise.all(promises)
     return { success: true }
   } catch (error) {
     return {
@@ -95,59 +122,76 @@ async function syncContact(payload: ContactPayload, listId?: string): Promise<Su
   }
 }
 
-function splitName(fullName: string): { firstName: string; lastName?: string } {
-  const parts = fullName.trim().split(/\s+/)
-  if (parts.length === 1) {
-    return { firstName: parts[0] }
-  }
-  return {
-    firstName: parts[0],
-    lastName: parts.slice(1).join(" "),
-  }
-}
-
 export async function submitNewsletterForm(data: NewsletterData): Promise<SubmitResult> {
   const { firstName, lastName } = splitName(data.name)
-
   const fieldValues: Array<{ field: string; value: string }> = []
 
-  if (data.language && LANGUAGE_FIELD_ID) {
+  if (data.language && FIELD_ID_LANGUAGE) {
     fieldValues.push({
-      field: LANGUAGE_FIELD_ID,
+      field: FIELD_ID_LANGUAGE,
       value: data.language,
     })
   }
 
-  const payload: ContactPayload = {
-    contact: {
-      email: data.email,
-      firstName,
-      ...(lastName && { lastName }),
-      ...(fieldValues.length > 0 && { fieldValues }),
-    },
+  const contact: Contact = {
+    email: data.email,
+    firstName,
+    lastName,
+    ...(fieldValues.length > 0 && {
+      fieldValues,
+    }),
   }
 
-  return syncContact(payload, NEWSLETTER_LIST_ID)
+  return syncContact(contact, {
+    listIds: [LIST_ID_NEWSLETTER, LIST_ID_MARKETING],
+  })
 }
 
 export async function submitContactForm(data: ContactData): Promise<SubmitResult> {
   const { firstName, lastName } = splitName(data.name)
-
   const fieldValues: Array<{ field: string; value: string }> = []
 
-  if (data.message && MESSAGE_FIELD_ID) {
-    fieldValues.push({ field: MESSAGE_FIELD_ID, value: data.message })
+  if (data.language && FIELD_ID_LANGUAGE) {
+    fieldValues.push({
+      field: FIELD_ID_LANGUAGE,
+      value: data.language,
+    })
   }
 
-  const payload: ContactPayload = {
-    contact: {
-      email: data.email,
-      firstName,
-      ...(lastName && { lastName }),
-      ...(data.phone && { phone: data.phone }),
-      ...(fieldValues.length > 0 && { fieldValues }),
-    },
+  if (data.message && FIELD_ID_GREEN_COFFEE_MESSAGE) {
+    fieldValues.push({
+      field: FIELD_ID_GREEN_COFFEE_MESSAGE,
+      value: data.message,
+    })
   }
 
-  return syncContact(payload, CONTACT_LIST_ID)
+  const contact: Contact = {
+    email: data.email,
+    firstName,
+    lastName,
+    phone: data.phone,
+    ...(fieldValues.length > 0 && {
+      fieldValues,
+    }),
+  }
+
+  return syncContact(contact, {
+    listIds: [LIST_ID_GREEN_COFFEE],
+    tagIds: [TAG_ID_GREEN_COFFEE],
+  })
+}
+
+function splitName(fullName: string): { firstName: string; lastName: string } {
+  const parts = fullName.trim().split(/\s+/)
+  if (parts.length === 1) {
+    return {
+      firstName: parts[0],
+      lastName: '',
+    }
+  }
+
+  return {
+    firstName: parts[0],
+    lastName: parts.slice(1).join(" "),
+  }
 }

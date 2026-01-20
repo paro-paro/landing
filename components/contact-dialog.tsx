@@ -38,11 +38,11 @@ export function ContactDialog({ trigger }: ContactDialogProps) {
     const formData = new FormData(form)
     const name = formData.get("name")?.toString() ?? ""
     const email = formData.get("email")?.toString() ?? ""
-    const phone = formData.get("phone")?.toString() || undefined
+    const phone = formData.get("phone")?.toString() ?? ""
     const message = formData.get("message")?.toString() || undefined
 
     const [result] = await Promise.all([
-      submitContactForm({ name, email, phone, message }),
+      submitContactForm({ name, email, phone, language: locale, message }),
       new Promise((resolve) => setTimeout(resolve, 250)),
     ])
 
@@ -94,12 +94,15 @@ export function ContactDialog({ trigger }: ContactDialogProps) {
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="contact-phone">{t("contact.phone")}</Label>
+            <Label htmlFor="contact-phone">
+              <span>{t("contact.phone")} <span className="text-red-500">*</span></span>
+            </Label>
             <Input
               id="contact-phone"
               name="phone"
               type="tel"
               placeholder={t("contact.phonePlaceholder")}
+              required
               disabled={isSubmitting}
             />
           </div>
