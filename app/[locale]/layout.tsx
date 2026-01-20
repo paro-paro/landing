@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import Script from "next/script"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages, setRequestLocale } from "next-intl/server"
-// import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next"
 import { GoogleTagManager } from "@next/third-parties/google"
 import { Toaster } from "@/components/ui/sonner"
 import { Nunito } from "next/font/google"
@@ -121,7 +121,6 @@ export default async function LocaleLayout({
           src="https://consent.cookiebot.com/uc.js"
           data-cbid="fffb64c2-81ef-4d3d-aa57-c0ada532fb70"
           data-blockingmode="auto"
-          strategy="beforeInteractive"
         />
       </head>
       <GoogleTagManager gtmId="GTM-MDBKCTLD" />
@@ -131,7 +130,7 @@ export default async function LocaleLayout({
           <main>{children}</main>
           <Footer />
         </NextIntlClientProvider>
-        {/* <Analytics /> */}
+        <Analytics />
         <Toaster position="top-center" />
       </body>
     </html>
