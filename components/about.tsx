@@ -23,7 +23,7 @@ export function About() {
   return (
     <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 border-b border-border bg-secondary/50">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-6 md:grid-cols-3 mb-8 sm:mb-16">
+        <div className="grid gap-6 md:grid-cols-3 mb-12 sm:mb-16">
           {cards.map((card, index) => (
             <div key={index} className="bg-card rounded-2xl p-8 text-center shadow-sm border border-border">
               <h2 className="text-xl md:text-2xl font-bold text-primary mb-4">{card.title}</h2>
