@@ -1,6 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
+import { YouTubeEmbed } from "@next/third-parties/google"
 
 export function About() {
   const t = useTranslations("about")
@@ -37,13 +38,10 @@ export function About() {
         {/* YouTube Video */}
         <div className="max-w-4xl mx-auto">
           <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.youtube.com/embed/VfcWRORcQnE"
-              title={t("videoTitle")}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-              className="absolute inset-0 w-full h-full"
+            <YouTubeEmbed
+              videoid="VfcWRORcQnE"
+              playlabel={t("videoTitle")}
+              style="width: 100%; height: 100%;"
             />
           </div>
         </div>
