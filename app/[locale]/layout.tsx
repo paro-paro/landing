@@ -34,15 +34,15 @@ export async function generateMetadata({
   const seo = {
     es: {
       title:
-        "EthicHub - Inversión en Préstamos Agrícolas | Impacto Financiero y Social",
+        "EthicHub - Inversión en préstamos agrícolas - Impacto financiero y social",
       description:
-        "Descubre a nuestros originadores y empieza a generar Impacto Ambiental, Financiero y Social. Únete a la innovación y conviértete en activista con EthicHub",
+        "Descubre a nuestros originadores y empieza a generar impacto ambiental, financiero y social. Únete a la innovación y conviértete en activista con EthicHub",
     },
     en: {
       title:
-        "EthicHub - Create social impact investing online or buying to our farmers",
+        "EthicHub - Investment in agricultural projects - Financial and social impact",
       description:
-        "Discover our originators and start generating Environmental, Financial and Social Impact. Join the innovation and become an activist with EthicHub",
+        "Discover our originators and start generating environmental, financial and social impact. Join the innovation and become an activist with EthicHub",
     },
   }
 
