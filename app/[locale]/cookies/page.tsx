@@ -15,12 +15,12 @@ export async function generateMetadata({
 
   const seo = {
     es: {
-      title: "Política de Cookies",
+      title: "Política de cookies",
       description: "Política de cookies de EthicHub. Información sobre qué son las cookies, tipos de cookies utilizadas, cómo desactivarlas y cookies de terceros.",
     },
     en: {
-      title: "Cookies Policy",
-      description: "EthicHub Cookies Policy. Information about what cookies are, types of cookies used, how to deactivate them and third-party cookies.",
+      title: "Cookies policy",
+      description: "EthicHub cookies policy. Information about what cookies are, types of cookies used, how to deactivate them and third-party cookies.",
     },
   }
 

@@ -20,12 +20,12 @@ export async function generateMetadata({
     es: {
       title: "Nuestros Agricultores - EthicHub",
       description:
-        "Tus préstamos ayudan a financiar nuestras actividades productivas y de exportación. Conseguimos una mejor calidad y precio por nuestros productos al mismo tiempo que conservamos nuestra tierra, fuente de sustento y riqueza.",
+        "Tus préstamos ayudan a financiar nuestras actividades productivas y de exportación. Conseguimos una mejor calidad y precio por nuestros productos al mismo tiempo que conservamos nuestra tierra, fuente de sustento y riqueza."
     },
     en: {
       title: "Our Farmers - EthicHub",
       description:
-        "Your loans help us improve the quality and price of our products, benefiting both our community and your investment. Meanwhile, we're committed to preserving our land for future generations.",
+        "Your loans help finance our productive and export activities. We achieve better quality and prices for our products while preserving our land, source of livelihood and wealth.",
     },
   }
 

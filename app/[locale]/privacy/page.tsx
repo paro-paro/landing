@@ -15,12 +15,12 @@ export async function generateMetadata({
 
   const seo = {
     es: {
-      title: "Política de Privacidad",
+      title: "Política de privacidad",
       description: "Política de privacidad de EthicHub. Información sobre el tratamiento de datos personales, derechos del usuario, medidas de seguridad y contacto para ejercer sus derechos.",
     },
     en: {
-      title: "Privacy Policy",
-      description: "EthicHub Privacy Policy. Information about personal data processing, user rights, security measures, and contact for exercising your rights.",
+      title: "Privacy policy",
+      description: "EthicHub privacy policy. Information about personal data processing, user rights, security measures, and contact for exercising your rights.",
     },
   }
 

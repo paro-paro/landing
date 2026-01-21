@@ -15,12 +15,12 @@ export async function generateMetadata({
     es: {
       title: "Glosario - EthicHub",
       description:
-        "Glosario de términos sobre blockchain, DeFi, inversión de impacto y café de especialidad. Aprende los conceptos clave del ecosistema EthicHub.",
+        "Términos y conceptos clave del ecosistema blockchain, DeFi y EthicHub.",
     },
     en: {
       title: "Glossary - EthicHub",
       description:
-        "Glossary of terms about blockchain, DeFi, impact investing and specialty coffee. Learn the key concepts of the EthicHub ecosystem.",
+        "Key terms and concepts from the blockchain, DeFi and EthicHub ecosystem.",
     },
   }
 

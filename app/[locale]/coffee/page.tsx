@@ -15,12 +15,12 @@ export async function generateMetadata({
     es: {
       title: "Café Verde - EthicHub",
       description:
-        "El café verde de EthicHub es producido con el esfuerzo de comunidades cafetaleras que reciben el 50% de beneficio de cada compra.",
+        "Café verde de especialidad con impacto social y trazabilidad real.",
     },
     en: {
       title: "Green Coffee - EthicHub",
       description:
-        "EthicHub's green coffee is produced with the effort of coffee-growing communities that receive a 50% share of the profits from each purchase.",
+        "Specialty green coffee with social impact and real traceability.",
     },
   }
 

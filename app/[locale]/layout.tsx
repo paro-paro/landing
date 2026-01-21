@@ -34,15 +34,15 @@ export async function generateMetadata({
   const seo = {
     es: {
       title:
-        "EthicHub - Invierte con propósito. Genera rentabilidad. Cambia vidas.",
+        "EthicHub - Invierte con propósito",
       description:
-        "Descubre a nuestros originadores y empieza a generar impacto ambiental, financiero y social. Únete a la innovación y conviértete en activista con EthicHub",
+        "Invierte en proyectos agrícolas sostenibles de pequeños productores de café, generando impacto social, rentabilidad financiera y regeneración ambiental.",
     },
     en: {
       title:
-        "EthicHub - Invest with purpose. Earn returns. Change lives.",
+        "EthicHub - Invest with purpose",
       description:
-        "Discover our originators and start generating environmental, financial and social impact. Join the innovation and become an activist with EthicHub",
+        "Invest in sustainable agricultural projects from small coffee producers, generating social impact, financial returns, and environmental regeneration.",
     },
   }
 

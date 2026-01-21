@@ -19,12 +19,12 @@ export async function generateMetadata({
     es: {
       title: "Blog - EthicHub",
       description:
-        "Noticias, artículos y novedades sobre inversión de impacto, café de especialidad y agricultura sostenible.",
+        "Descubre artículos sobre inversiones con impacto, café, agricultura sostenible y de cómo tu dinero puede generar un cambio positivo.",
     },
     en: {
       title: "Blog - EthicHub",
       description:
-        "News, articles and updates about impact investing, specialty coffee and sustainable agriculture.",
+        "Explore articles about impact investing, coffee, sustainable agriculture and how your money can drive positive change.",
     },
   }
 

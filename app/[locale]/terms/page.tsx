@@ -15,12 +15,12 @@ export async function generateMetadata({
 
   const seo = {
     es: {
-      title: "Términos y Condiciones",
-      description: "Términos y condiciones de uso de la plataforma EthicHub. Información sobre servicios de préstamos colaborativos, riesgos, obligaciones y política de privacidad.",
+      title: "Términos y condiciones",
+      description: "Términos y condiciones de uso de la plataforma EthicHub. Información sobre servicios de préstamos colaborativos, riesgos y obligaciones.",
     },
     en: {
-      title: "Terms and Conditions",
-      description: "Terms and conditions for using the EthicHub platform. Information about collaborative loan services, risks, obligations, and privacy policy.",
+      title: "Terms and conditions",
+      description: "Terms and conditions for using the EthicHub platform. Information about collaborative loan services, risks and obligations.",
     },
   }
 
