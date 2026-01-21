@@ -144,6 +144,11 @@ export default async function FarmersPage({
   setRequestLocale(locale)
   const t = await getTranslations("farmers")
 
+  const ethixDocsUrl =
+    locale === "en"
+      ? "https://ethichub.gitbook.io/ethichub/en/financing-and-guarantee-mechanisms/ethix"
+      : "https://ethichub.gitbook.io/ethichub/mecanismos-de-financiamiento-y-garantia/ethix"
+
   const testimonials = t.raw("testimonials") as Array<{
     quote: string
     author: string
@@ -310,7 +315,7 @@ export default async function FarmersPage({
                   {t("ethix.description")}
                 </p>
                 <Button size="lg" variant="secondary" className="px-8" asChild>
-                  <Link href="https://ethichub.gitbook.io/ethichub/mecanismos-de-financiamiento-y-garantia/ethix" target="_blank" rel="noopener noreferrer">
+                  <Link href={ethixDocsUrl} target="_blank" rel="noopener noreferrer">
                     {t("ethix.learnMore")}
                   </Link>
                 </Button>
