@@ -174,11 +174,19 @@
     },
     "newsletter": {
       "title": "Subscribe to newsletter",
-      "description": "Receive the latest news, updates, and investment opportunities directly in your email.",
+      "description": "Get updates, projects, and exclusive content about coffee, Web3, and impact investing.",
       "nameLabel": "Name",
       "namePlaceholder": "Your name",
       "emailLabel": "Email",
       "emailPlaceholder": "you@email.com",
+      "interestsLabel": "What topics are you interested in?",
+      "interestsHint": "You can choose more than one",
+      "interests": {
+        "impactInvesting": "Impact investing",
+        "web3": "Web3 & Blockchain",
+        "coffee": "Specialty coffee (green coffee, roasting, producers, origin)"
+      },
+      "noSpam": "We'll only send you content related to your interests. No spam.",
       "submit": "Subscribe",
       "submitting": "Sending...",
       "success": "You have successfully subscribed!",

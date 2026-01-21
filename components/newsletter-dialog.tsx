@@ -16,7 +16,18 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Checkbox } from "@/components/ui/checkbox"
 import { submitNewsletterForm } from "@/lib/activecampaign"
+
+const TAG_ID_INTEREST_COFFEE = '221'
+const TAG_ID_INTEREST_WEB3 = '222'
+const TAG_ID_INTEREST_IMPACT_INVESTMENT = '223'
+
+const INTEREST_TAG_IDS = {
+  impactInvesting: TAG_ID_INTEREST_IMPACT_INVESTMENT,
+  web3: TAG_ID_INTEREST_WEB3,
+  coffee: TAG_ID_INTEREST_COFFEE,
+} as const
 
 type NewsletterDialogProps = {
   trigger: React.ReactElement
@@ -27,6 +38,13 @@ export function NewsletterDialog({ trigger }: NewsletterDialogProps) {
   const locale = useLocale()
   const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [open, setOpen] = React.useState(false)
+  const [interests, setInterests] = React.useState<string[]>([])
+
+  function handleInterestChange(tagId: string, checked: boolean) {
+    setInterests((prev) =>
+      checked ? [...prev, tagId] : prev.filter((id) => id !== tagId)
+    )
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -38,7 +56,7 @@ export function NewsletterDialog({ trigger }: NewsletterDialogProps) {
     const email = formData.get("email")?.toString() ?? ""
 
     const [result] = await Promise.all([
-      submitNewsletterForm({ name, email, language: locale }),
+      submitNewsletterForm({ name, email, language: locale, interests }),
       new Promise((resolve) => setTimeout(resolve, 250)),
     ])
 
@@ -47,6 +65,7 @@ export function NewsletterDialog({ trigger }: NewsletterDialogProps) {
     if (result.success) {
       toast.success(t("newsletter.success"))
       form.reset()
+      setInterests([])
       setOpen(false)
     } else {
       toast.error(t("newsletter.error"))
@@ -56,7 +75,7 @@ export function NewsletterDialog({ trigger }: NewsletterDialogProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-md p-8 bg-card">
+      <DialogContent className="sm:max-w-lg p-8 bg-card max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{t("newsletter.title")}</DialogTitle>
           <DialogDescription>{t("newsletter.description")}</DialogDescription>
@@ -91,6 +110,58 @@ export function NewsletterDialog({ trigger }: NewsletterDialogProps) {
               disabled={isSubmitting}
             />
           </div>
+          <div className="grid gap-3">
+            <div>
+              <Label id="interests-label">{t("newsletter.interestsLabel")}</Label>
+              <p className="text-sm italic text-muted-foreground/80 mt-1">
+                {t("newsletter.interestsHint")}
+              </p>
+            </div>
+            <div className="space-y-4" role="group" aria-labelledby="interests-label">
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="interest-impact"
+                  checked={interests.includes(INTEREST_TAG_IDS.impactInvesting)}
+                  onCheckedChange={(checked) =>
+                    handleInterestChange(INTEREST_TAG_IDS.impactInvesting, !!checked)
+                  }
+                  disabled={isSubmitting}
+                />
+                <Label htmlFor="interest-impact" className="font-normal cursor-pointer">
+                  {t("newsletter.interests.impactInvesting")}
+                </Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="interest-web3"
+                  checked={interests.includes(INTEREST_TAG_IDS.web3)}
+                  onCheckedChange={(checked) =>
+                    handleInterestChange(INTEREST_TAG_IDS.web3, !!checked)
+                  }
+                  disabled={isSubmitting}
+                />
+                <Label htmlFor="interest-web3" className="font-normal cursor-pointer">
+                  {t("newsletter.interests.web3")}
+                </Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="interest-coffee"
+                  checked={interests.includes(INTEREST_TAG_IDS.coffee)}
+                  onCheckedChange={(checked) =>
+                    handleInterestChange(INTEREST_TAG_IDS.coffee, !!checked)
+                  }
+                  disabled={isSubmitting}
+                />
+                <Label htmlFor="interest-coffee" className="font-normal cursor-pointer">
+                  {t("newsletter.interests.coffee")}
+                </Label>
+              </div>
+            </div>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            {t("newsletter.noSpam")}
+          </p>
           <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? (
               <>

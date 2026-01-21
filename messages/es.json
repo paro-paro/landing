@@ -174,11 +174,19 @@
     },
     "newsletter": {
       "title": "Suscríbete a la newsletter",
-      "description": "Recibe las últimas noticias, actualizaciones y oportunidades de inversión directamente en tu correo.",
+      "description": "Recibe noticias, proyectos y contenidos exclusivos sobre café, Web3 e inversión de impacto.",
       "nameLabel": "Nombre",
       "namePlaceholder": "Tu nombre",
       "emailLabel": "Email",
       "emailPlaceholder": "tu@email.com",
+      "interestsLabel": "¿Sobre qué temas te gustaría recibir información?",
+      "interestsHint": "Puedes elegir más de una opción",
+      "interests": {
+        "impactInvesting": "Inversión de impacto",
+        "web3": "Web3 y Blockchain",
+        "coffee": "Café de especialidad (café verde, tostado, productores, origen)"
+      },
+      "noSpam": "Solo te enviaremos contenido relacionado con tus intereses. Sin spam.",
       "submit": "Suscribirme",
       "submitting": "Enviando...",
       "success": "¡Te has suscrito correctamente!",

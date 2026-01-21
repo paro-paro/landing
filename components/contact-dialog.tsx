@@ -60,7 +60,7 @@ export function ContactDialog({ trigger }: ContactDialogProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-md p-8">
+      <DialogContent className="sm:max-w-md p-8 max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{t("contact.title")}</DialogTitle>
           <DialogDescription>

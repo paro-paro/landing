@@ -8,6 +8,7 @@ const LIST_ID_GREEN_COFFEE = '9'
 const FIELD_ID_LANGUAGE = '75'
 const FIELD_ID_GREEN_COFFEE_MESSAGE = '3'
 const TAG_ID_GREEN_COFFEE = '132'
+const TAG_ID_SUBSCRIBER = '187'
 
 type SubmitResult = {
   success: boolean
@@ -18,6 +19,7 @@ type NewsletterData = {
   name: string
   email: string
   language: string
+  interests?: string[]
 }
 
 type ContactData = {
@@ -142,8 +144,11 @@ export async function submitNewsletterForm(data: NewsletterData): Promise<Submit
     }),
   }
 
+  const tagIds = [TAG_ID_SUBSCRIBER, ...(data.interests ?? [])]
+
   return syncContact(contact, {
     listIds: [LIST_ID_NEWSLETTER, LIST_ID_MARKETING],
+    tagIds,
   })
 }
 
