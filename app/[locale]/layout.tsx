@@ -82,9 +82,6 @@ export async function generateMetadata({
       description: currentSeo.description,
       images: [`${siteUrl}/home.avif`],
     },
-    verification: {
-      google: "qZHWwkQe7A-JcXzT4T_xRpMC3dJ_IZc8cLmcNy_bPuQ",
-    },
     icons: {
       icon: [
         { url: "/favicon.ico", sizes: "any" },
