@@ -1,13 +1,12 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { notFound } from "next/navigation"
 import { setRequestLocale, getTranslations } from "next-intl/server"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { getAllTags, getPostsByTag } from "@/lib/blog"
 import { getAlternateTag } from "@/lib/blog-translations"
-import { Calendar, Clock, ArrowLeft, User } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
+import BlogPostsSearch from "../../blog-posts-search"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.ethichub.com"
 
@@ -91,8 +90,6 @@ export default async function TagPage({ params }: TagPageProps) {
     notFound()
   }
 
-  const dateLocale = locale === "en" ? "en-US" : "es-ES"
-
   return (
     <div className="pt-24 sm:pt-32 pb-12 sm:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -121,54 +118,8 @@ export default async function TagPage({ params }: TagPageProps) {
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Main content - Posts */}
-            <div className="lg:col-span-3 space-y-6 sm:space-y-12">
-              {posts.map((post) => (
-                <Link key={post.slug} href={`/${locale}/blog/${post.slug}`} className="block">
-                  <Card className="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-                    <CardHeader>
-                      <div className="flex flex-wrap gap-2 mb-2">
-                        {post.frontmatter.tags?.map((t) => (
-                          <Badge
-                            key={t}
-                            variant={t === decodedTag ? "default" : "secondary"}
-                            className="border border-border"
-                          >
-                            {t}
-                          </Badge>
-                        ))}
-                      </div>
-                      <CardTitle className="text-xl sm:text-2xl hover:text-primary transition-colors">
-                        {post.frontmatter.title}
-                      </CardTitle>
-                      <CardDescription className="text-base">
-                        {post.frontmatter.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                        {post.frontmatter.author && (
-                          <span className="flex items-center gap-1">
-                            <User className="h-4 w-4" />
-                            {post.frontmatter.author}
-                          </span>
-                        )}
-                        <span className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          {new Date(post.frontmatter.date).toLocaleDateString(dateLocale, {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-4 w-4" />
-                          {post.readingTime}
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+            <div className="lg:col-span-3">
+              <BlogPostsSearch posts={posts} activeTag={decodedTag} />
             </div>
 
             {/* Sidebar - All Tags */}
