@@ -72,7 +72,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/en/privacy-policy",
+        source: "/en/politica-de-privacidad",
         destination: "/en/privacy",
         permanent: true,
       },
