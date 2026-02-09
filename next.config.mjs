@@ -39,9 +39,20 @@ const nextConfig = {
           "https://ethichub.gitbook.io/ethichub/en/financing-and-guarantee-mechanisms/ethix",
         permanent: true,
       },
+      // terms
       {
         source: "/es/terminos-y-condiciones",
         destination: "/es/terms",
+        permanent: true,
+      },
+      {
+        source: "/es/terms-and-conditions",
+        destination: "/es/terms",
+        permanent: true,
+      },
+      {
+        source: "/en/terminos-y-condiciones",
+        destination: "/en/terms",
         permanent: true,
       },
       {
@@ -49,9 +60,20 @@ const nextConfig = {
         destination: "/en/terms",
         permanent: true,
       },
+      // privacy
       {
         source: "/es/politica-de-privacidad",
         destination: "/es/privacy",
+        permanent: true,
+      },
+      {
+        source: "/es/privacy-policy",
+        destination: "/es/privacy",
+        permanent: true,
+      },
+      {
+        source: "/en/privacy-policy",
+        destination: "/en/privacy",
         permanent: true,
       },
       {
