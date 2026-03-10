@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const enSlug = locale === "en" ? slug : getAlternateSlug(slug, "es", "en")
 
   return {
-    title: `${post.frontmatter.title} - EthicHub`,
+    title: `${post.frontmatter.title} - Blog - EthicHub`,
     description: post.frontmatter.description,
     alternates: {
       canonical: canonicalUrl,

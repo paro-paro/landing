@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { setRequestLocale } from "next-intl/server"
+import { setRequestLocale, getTranslations } from "next-intl/server"
 import { getAllFaqs } from "@/lib/faqs"
 import { FaqsContent } from "@/components/faqs-content"
 
@@ -11,8 +11,9 @@ interface FaqsPageProps {
 
 export async function generateMetadata({ params }: FaqsPageProps): Promise<Metadata> {
   const { locale } = await params
-  const title = "Preguntas Frecuentes - EthicHub"
-  const description = "Encuentra respuestas a las preguntas más frecuentes sobre EthicHub, inversiones, tecnología, plataforma y más."
+  const t = await getTranslations({ locale, namespace: "faqs" })
+  const title = `${t("title")} - EthicHub`
+  const description = t("description")
   const canonicalUrl = `${siteUrl}/${locale}/faqs`
 
   return {
@@ -20,6 +21,10 @@ export async function generateMetadata({ params }: FaqsPageProps): Promise<Metad
     description,
     alternates: {
       canonical: canonicalUrl,
+      languages: {
+        es: `${siteUrl}/es/faqs`,
+        en: `${siteUrl}/en/faqs`,
+      },
     },
     openGraph: {
       title,
@@ -36,7 +41,7 @@ export default async function FaqsPage({ params }: FaqsPageProps) {
   const { locale } = await params
   setRequestLocale(locale)
 
-  const categories = getAllFaqs()
+  const categories = getAllFaqs(locale)
 
   const categoriesData = categories.map((category) => ({
     slug: category.slug,

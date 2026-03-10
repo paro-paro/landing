@@ -40,11 +40,11 @@ export function Footer() {
       { label: t("links.terms"), href: `/${locale}/terms` },
       { label: t("links.privacy"), href: `/${locale}/privacy` },
       { label: t("links.cookies"), href: `/${locale}/cookies` },
-      { label: t("links.risks"), href: `/${locale}/faqs?section=riesgos-en-la-inversion` },
+      { label: t("links.risks"), href: `/${locale}/faqs?q=${locale === 'es' ? 'riesgos-en-la-inversion' : 'investment-risks'}` },
     ],
   }
 
-  const risksUrl = `/${locale}/faqs?section=riesgos-en-la-inversion`
+  const risksUrl = `/${locale}/faqs?q=${locale === 'es' ? 'riesgos-en-la-inversion' : 'investment-risks'}`
 
   return (
     <footer className="bg-card border-t border-border">
@@ -57,7 +57,7 @@ export function Footer() {
       >
         <p className="text-center text-sm text-primary-foreground/90 max-w-5xl mx-auto">
           {t("disclaimer")}{" "}
-          <span className="text-accent underline">{t("disclaimerLink")}</span>
+          <span className="text-accent underline underline-offset-4">{t("disclaimerLink")}</span>
         </p>
       </Link>
 

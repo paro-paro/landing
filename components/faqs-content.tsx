@@ -1,6 +1,7 @@
 "use client"
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation"
+import { useTranslations } from "next-intl"
 import { ArrowLeft } from "lucide-react"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
@@ -21,16 +22,17 @@ interface FaqsContentProps {
 }
 
 export function FaqsContent({ categories }: FaqsContentProps) {
+  const t = useTranslations("faqs")
   const searchParams = useSearchParams()
   const router = useRouter()
   const pathname = usePathname()
 
-  const selectedCategory = searchParams.get("section")
+  const selectedCategory = searchParams.get("q")
   const activeCategory = categories.find((c) => c.slug === selectedCategory)
 
   const setSelectedCategory = (slug: string | null) => {
     if (slug) {
-      router.push(`${pathname}?section=${slug}`, { scroll: false })
+      router.push(`${pathname}?q=${slug}`, { scroll: false })
     } else {
       router.push(pathname, { scroll: false })
     }
@@ -41,10 +43,10 @@ export function FaqsContent({ categories }: FaqsContentProps) {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            Preguntas Frecuentes
+            {t("title")}
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Encuentra respuestas a las preguntas más frecuentes sobre EthicHub.
+            {t("description")}
           </p>
         </div>
 
@@ -67,7 +69,7 @@ export function FaqsContent({ categories }: FaqsContentProps) {
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors mb-6"
             >
               <ArrowLeft className="h-4 w-4" />
-              <span>Volver</span>
+              <span>{t("back")}</span>
             </button>
 
             <h2 className="text-xl font-semibold text-foreground mb-6">

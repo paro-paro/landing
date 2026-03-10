@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const CONTENT_DIR = path.join(process.cwd(), 'content/faqs')
+const CONTENT_BASE = path.join(process.cwd(), 'content/faqs')
 
 export interface FaqItem {
   slug: string
@@ -17,20 +17,34 @@ export interface FaqCategory {
   items: FaqItem[]
 }
 
-const CATEGORY_ORDER = [
-  'informacion-ethichub',
-  'nodo-y-agricultores',
-  'plataforma',
-  'tecnologia',
-  'xdai',
-  'inversiones',
-  'minimice-yield-bond',
-  'portfolio',
-  'token-ethix',
-  'legal',
-  'riesgos-en-la-inversion',
-  'atencion-al-cliente',
-]
+const CATEGORY_ORDER: Record<string, number> = {
+  // Spanish
+  'informacion-ethichub': 0,
+  'nodo-y-agricultores': 1,
+  'plataforma': 2,
+  'tecnologia': 3,
+  'xdai': 4,
+  'inversiones': 5,
+  'minimice-yield-bond': 6,
+  'portfolio': 7,
+  'token-ethix': 8,
+  'legal': 9,
+  'riesgos-en-la-inversion': 10,
+  'atencion-al-cliente': 11,
+  // English
+  'ethichub-information': 0,
+  'node-and-farmers': 1,
+  'platform': 2,
+  'technology': 3,
+  // 'xdai': 4, (same slug)
+  'investments': 5,
+  // 'minimice-yield-bond': 6, (same slug)
+  // 'portfolio': 7, (same slug)
+  'ethix-token': 8,
+  // 'legal': 9, (same slug)
+  'investment-risks': 10,
+  'customer-support': 11,
+}
 
 function markdownToHtml(md: string): string {
   let s = md.trim()
@@ -58,17 +72,18 @@ function markdownToHtml(md: string): string {
   return paragraphs.map(p => `<p>${p.replace(/\n/g, '<br/>')}</p>`).join('')
 }
 
-export function getAllFaqs(): FaqCategory[] {
-  if (!fs.existsSync(CONTENT_DIR)) {
+export function getAllFaqs(locale: string = 'es'): FaqCategory[] {
+  const contentDir = path.join(CONTENT_BASE, locale)
+  if (!fs.existsSync(contentDir)) {
     return []
   }
 
   const categories: FaqCategory[] = []
-  const dirs = fs.readdirSync(CONTENT_DIR, { withFileTypes: true })
+  const dirs = fs.readdirSync(contentDir, { withFileTypes: true })
     .filter(d => d.isDirectory())
 
   for (const dir of dirs) {
-    const dirPath = path.join(CONTENT_DIR, dir.name)
+    const dirPath = path.join(contentDir, dir.name)
     const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.mdx'))
 
     const items: FaqItem[] = files.map(file => {
@@ -100,9 +115,9 @@ export function getAllFaqs(): FaqCategory[] {
   }
 
   categories.sort((a, b) => {
-    const aIdx = CATEGORY_ORDER.indexOf(a.slug)
-    const bIdx = CATEGORY_ORDER.indexOf(b.slug)
-    return (aIdx === -1 ? 999 : aIdx) - (bIdx === -1 ? 999 : bIdx)
+    const aIdx = CATEGORY_ORDER[a.slug] ?? 999
+    const bIdx = CATEGORY_ORDER[b.slug] ?? 999
+    return aIdx - bIdx
   })
 
   return categories

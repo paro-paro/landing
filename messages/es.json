@@ -376,6 +376,11 @@
       "title": "Política de cookies"
     }
   },
+  "faqs": {
+    "title": "Preguntas Frecuentes",
+    "description": "Encuentra respuestas a las preguntas más frecuentes sobre EthicHub.",
+    "back": "Volver"
+  },
   "common": {
     "learnMore": "Saber más",
     "required": "*"

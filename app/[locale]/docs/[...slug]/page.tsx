@@ -35,15 +35,16 @@ export async function generateMetadata({ params }: DocsPageProps): Promise<Metad
   }
 
   const canonicalUrl = `${siteUrl}/${locale}/docs/${slug.join("/")}`
+  const sectionTitle = locale === "es" ? "Documentación" : "Documentation"
 
   return {
-    title: `${doc.frontmatter.title} - EthicHub Docs`,
+    title: `${doc.frontmatter.title} - ${sectionTitle} - EthicHub`,
     description: doc.frontmatter.description,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${doc.frontmatter.title} - EthicHub Docs`,
+      title: `${doc.frontmatter.title} - ${sectionTitle} - EthicHub`,
       description: doc.frontmatter.description,
       url: canonicalUrl,
       siteName: "EthicHub",

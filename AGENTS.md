@@ -255,7 +255,7 @@ import remarkGfm from "remark-gfm"
 | `/[locale]/privacy` | Privacy policy |
 | `/[locale]/cookies` | Cookie policy |
 | `/[locale]/faqs` | FAQ categories & accordion |
-| `/[locale]/faqs?section=slug` | FAQ section expanded |
+| `/[locale]/faqs?q=slug` | FAQ section expanded |
 | `/[locale]/docs/[...slug]` | Documentation page with sidebar |
 
 ### Redirects (next.config.mjs)

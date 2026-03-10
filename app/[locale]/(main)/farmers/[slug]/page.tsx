@@ -332,7 +332,7 @@ export async function generateMetadata({
   const canonicalUrl = `${siteUrl}/${locale}/farmers/${slug}`;
 
   return {
-    title: `${originador.name} - EthicHub`,
+    title: `${originador.name} - ${locale === 'es' ? 'Nuestros Agricultores' : 'Our Farmers'} - EthicHub`,
     description: metaDescription,
     alternates: {
       canonical: canonicalUrl,
@@ -342,7 +342,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${originador.name} - EthicHub`,
+      title: `${originador.name} - ${locale === 'es' ? 'Nuestros Agricultores' : 'Our Farmers'} - EthicHub`,
       description: metaDescription,
       url: canonicalUrl,
       siteName: "EthicHub",
@@ -359,7 +359,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${originador.name} - EthicHub`,
+      title: `${originador.name} - ${locale === 'es' ? 'Nuestros Agricultores' : 'Our Farmers'} - EthicHub`,
       description: metaDescription,
       images: [`${siteUrl}${originador.image}`],
     },
