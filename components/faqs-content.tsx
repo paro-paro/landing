@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useSearchParams, useRouter, usePathname } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
@@ -21,9 +21,20 @@ interface FaqsContentProps {
 }
 
 export function FaqsContent({ categories }: FaqsContentProps) {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
 
+  const selectedCategory = searchParams.get("section")
   const activeCategory = categories.find((c) => c.slug === selectedCategory)
+
+  const setSelectedCategory = (slug: string | null) => {
+    if (slug) {
+      router.push(`${pathname}?section=${slug}`, { scroll: false })
+    } else {
+      router.push(pathname, { scroll: false })
+    }
+  }
 
   return (
     <div className="pt-24 sm:pt-32 pb-12 sm:pb-24">
@@ -53,7 +64,7 @@ export function FaqsContent({ categories }: FaqsContentProps) {
           <div>
             <button
               onClick={() => setSelectedCategory(null)}
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors mb-6"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Volver</span>

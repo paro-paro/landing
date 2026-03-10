@@ -407,7 +407,7 @@ export default async function OriginadorPage({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:py-24">
           <Link
             href={`/${locale}/farmers`}
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors mb-12"
           >
             <ArrowLeft className="h-4 w-4" />
             {t("detail.back")}

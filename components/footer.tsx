@@ -40,13 +40,11 @@ export function Footer() {
       { label: t("links.terms"), href: `/${locale}/terms` },
       { label: t("links.privacy"), href: `/${locale}/privacy` },
       { label: t("links.cookies"), href: `/${locale}/cookies` },
-      { label: t("links.risks"), href: locale === "en" ? "https://help.ethichub.com/hc/es/articles/18096369276189-What-are-the-risks-of-your-investment" : "https://help.ethichub.com/hc/es/articles/360006540037--Cu%C3%A1les-son-los-riesgos-de-tu-inversi%C3%B3n" },
+      { label: t("links.risks"), href: `/${locale}/faqs?section=riesgos-en-la-inversion` },
     ],
   }
 
-  const risksUrl = locale === "en" 
-    ? "https://help.ethichub.com/hc/es/articles/18096369276189-What-are-the-risks-of-your-investment" 
-    : "https://help.ethichub.com/hc/es/articles/360006540037--Cu%C3%A1les-son-los-riesgos-de-tu-inversi%C3%B3n"
+  const risksUrl = `/${locale}/faqs?section=riesgos-en-la-inversion`
 
   return (
     <footer className="bg-card border-t border-border">
@@ -87,7 +85,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground/50 hover:text-foreground transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
@@ -109,7 +107,7 @@ export function Footer() {
                         <a
                           href={link.href}
                           download
-                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                          className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors"
                         >
                           {link.label}
                         </a>
@@ -123,7 +121,7 @@ export function Footer() {
                         href={link.href}
                         prefetch={!isExternal}
                         {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -134,7 +132,7 @@ export function Footer() {
                   <li>
                     <NewsletterDialog
                       trigger={
-                        <button className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
+                        <button className="text-sm text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors cursor-pointer">
                           Newsletter
                         </button>
                       }

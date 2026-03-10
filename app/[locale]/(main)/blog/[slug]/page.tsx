@@ -120,7 +120,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {/* Back link */}
           <Link
             href={`/${locale}/blog`}
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline underline-offset-4 mb-8 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             {t("backToBlog")}
@@ -190,7 +190,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <footer className="mt-12 pt-8 border-t">
             <Link
               href={`/${locale}/blog`}
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               {t("seeMoreArticles")}

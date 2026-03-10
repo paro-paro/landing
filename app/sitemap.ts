@@ -29,6 +29,7 @@ const staticPages = [
   '',           // homepage
   '/blog',
   '/coffee',
+  '/faqs',
   '/farmers',
   '/glossary',
   '/terms',

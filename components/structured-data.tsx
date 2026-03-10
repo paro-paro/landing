@@ -21,7 +21,7 @@ export function OrganizationSchema() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      url: "https://help.ethichub.com/",
+      url: "https://www.ethichub.com/es/faqs",
     },
   }
 

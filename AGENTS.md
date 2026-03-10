@@ -38,25 +38,40 @@ landing/
 │   │   ├── cookies/           # Cookie policy
 │   │   ├── farmers/           # Originators/farmers page
 │   │   │   └── [slug]/        # Individual originator profile
+│   │   ├── faqs/              # FAQ categories & accordion
 │   │   ├── glossary/          # Blockchain/DeFi glossary
 │   │   ├── privacy/           # Privacy policy
 │   │   ├── terms/             # Terms and conditions
 │   │   ├── layout.tsx         # Locale layout with providers
 │   │   └── page.tsx           # Homepage
+│   │   docs/                  # Documentation (outside main layout)
+│   │   ├── layout.tsx         # Docs layout with back link
+│   │   ├── page.tsx           # Docs index (redirect)
+│   │   └── [...slug]/         # Individual doc pages with sidebar
 │   ├── globals.css            # Global styles & CSS variables
 │   └── layout.tsx             # Root layout (minimal)
 ├── components/
 │   ├── ui/                    # shadcn/ui components
 │   └── *.tsx                  # Page-level components
 ├── content/
-│   └── blog/
-│       ├── en/                # English blog posts (MDX)
-│       └── es/                # Spanish blog posts (MDX)
+│   ├── blog/
+│   │   ├── en/                # English blog posts (MDX)
+│   │   └── es/                # Spanish blog posts (MDX)
+│   ├── docs/
+│   │   ├── en/                # English docs (MDX, by section)
+│   │   └── es/                # Spanish docs (MDX, by section)
+│   └── faqs/                  # FAQ content (MDX, by category)
+│       ├── informacion-ethichub/
+│       ├── inversiones/
+│       ├── plataforma/
+│       └── ...                # 12 categories total
 ├── i18n/
 │   ├── config.ts              # Locale configuration
 │   └── request.ts             # next-intl request config
 ├── lib/
 │   ├── blog.ts                # Blog utilities (getAllPosts, etc.)
+│   ├── docs.ts                # Docs utilities (getDocBySlug, getDocsNavigation, etc.)
+│   ├── faqs.ts                # FAQ utilities (getAllFaqs, markdownToHtml)
 │   └── utils.ts               # cn() utility function
 ├── messages/
 │   ├── en.json                # English translations
@@ -105,7 +120,7 @@ export function Component() {
 
 **Translation Files:** `messages/{locale}.json`
 
-Namespaces: `nav`, `hero`, `about`, `features`, `pricing`, `testimonials`, `cta`, `footer`, `coffee`, `farmers`, `blog`, `glossary`, `legal`, `common`, `languageSwitcher`
+Namespaces: `nav`, `hero`, `about`, `features`, `pricing`, `testimonials`, `cta`, `footer`, `coffee`, `farmers`, `blog`, `glossary`, `legal`, `common`, `languageSwitcher`, `docs`
 
 **Arrays in Translations:** Access with `t.raw()`:
 ```typescript
@@ -239,6 +254,9 @@ import remarkGfm from "remark-gfm"
 | `/[locale]/terms` | Terms of service |
 | `/[locale]/privacy` | Privacy policy |
 | `/[locale]/cookies` | Cookie policy |
+| `/[locale]/faqs` | FAQ categories & accordion |
+| `/[locale]/faqs?section=slug` | FAQ section expanded |
+| `/[locale]/docs/[...slug]` | Documentation page with sidebar |
 
 ### Redirects (next.config.mjs)
 
@@ -287,8 +305,8 @@ export async function generateMetadata({ params }) {
 | Staking | https://app.ethichub.com/staking |
 | Green Coffee Shop | https://greencoffee.ethichub.com/ |
 | Roasted Coffee | https://cryptocafe.madrid/ |
-| Documentation | https://ethichub.gitbook.io/ethichub/ |
-| Help Center | https://help.ethichub.com/hc/es |
+| Documentation | /es/docs/introduccion/ethichub |
+| FAQs | /es/faqs |
 | Forum | https://forum.ethichub.com/ |
 
 ## Development Commands
@@ -339,3 +357,6 @@ pnpm lint     # Run ESLint
 2. **Images Unoptimized** - `images: { unoptimized: true }`
 3. **Glossary Terms** - Hardcoded in Spanish only (domain-specific terminology)
 4. **Originator Data** - Hardcoded in `farmers/[slug]/page.tsx` (would ideally come from CMS)
+5. **FAQs** - Spanish only, migrated from Zendesk. Content in `content/faqs/` as MDX, converted to HTML via custom `markdownToHtml()` in `lib/faqs.ts`
+6. **Docs** - Migrated from GitBook. ES and EN content in `content/docs/`. Rendered with `MDXRemote`. Has its own layout outside `(main)` route group (no shared header/footer, uses a back link instead)
+7. **CLAUDE.md** - Symlinked to AGENTS.md

@@ -96,7 +96,7 @@ export default async function TagPage({ params }: TagPageProps) {
           {/* Back link */}
           <Link
             href={`/${locale}/blog`}
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline underline-offset-4 mb-8 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             {t("backToBlog")}
