@@ -149,8 +149,8 @@ export default async function FarmersPage({
 
   const ethixDocsUrl =
     locale === "en"
-      ? "https://ethichub.gitbook.io/ethichub/en/financing-and-guarantee-mechanisms/ethix"
-      : "https://ethichub.gitbook.io/ethichub/mecanismos-de-financiamiento-y-garantia/ethix";
+      ? `/${locale}/docs/financing-and-guarantee-mechanisms/ethix`
+      : `/${locale}/docs/mecanismos-de-financiamiento-y-garantia/ethix`;
 
   const testimonials = t.raw("testimonials") as Array<{
     quote: string;

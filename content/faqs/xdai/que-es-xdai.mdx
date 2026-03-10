@@ -1,0 +1,24 @@
+---
+title: "¿Qué es xDai?"
+description: ""
+icon: "circle-help"
+section: "faqs-xdai"
+sectionTitle: "xDai"
+order: 3
+---
+
+DAI es un token ERC20 cuyo precio sigue al del USD. Dicho token “vive” en la blockchain descentralizada llamada Ethereum, cuya moneda nativa es el Ether (ETH).
+
+La seguridad de Ethereum se basa en que una serie de ordenadores compiten por validar las transacciones que se hacen en la red de forma que formen parte del registro común.
+
+El proceso de competición para alcanzar consenso sobre qué transacciones son válidas en Ethereum es la Prueba de Trabajo (Proof of Work). Los ordenadores participantes (nodos validadores o mineros) son recompensados por realizar este trabajo (en ETH), y a más utilización de la red, más recompensas ganan. Al ser una red descentralizada, son los usuarios de la red los que corren con los costes cada vez que se lanza una transacción.
+
+Hace unos años, la empresa de I+D [POA](https://www.poa.network/) creo xDAI, una red blockchain muy parecida a Ethereum (se usan las mismas direcciones y smart contracts) pero cuya moneda nativa en lugar de ser Ether, es el xDAI, token que tiene siempre el mismo valor del DAI.
+
+El mecanismo de consenso de xDAI es la Prueba de Autoridad (Proof of Authority), que resulta menos costoso para los nodos validadores, con lo cual las comisiones de red son muy bajas además de estar pagadas en xDAI (son céntimos de USD). Al no existir la puja por incluir transacciones, los tiempos de confirmación son más bajos.
+
+Estas ventajas son a costa de sacrificar grados de descentralización. Hay menos nodos validando transacciones pero su identidad es legalmente conocida, con lo que están incentivados a ser “legales”.
+
+Para generar xDAI, un usuario ha de enviar DAI a un smart contract especial desplegado en Ethereum llamado TokenBridge, que bloqueará los DAI en Ethereum y comunicará a su homólogo en xDAI que cree el mismo número de tokens xDAI y los mande a la dirección del usuario, conectando así las redes. El mecanismo inverso es similar (de xDAI a DAI).
+
+xDAI como moneda es entonces la representación del DAI en la blockchain xDAI

@@ -27,16 +27,25 @@ const nextConfig = {
         destination: "/:locale",
         permanent: true,
       },
+      // Docs index redirects
+      {
+        source: "/es/docs",
+        destination: "/es/docs/introduccion/ethichub",
+        permanent: false,
+      },
+      {
+        source: "/en/docs",
+        destination: "/en/docs/introduction/ethichub",
+        permanent: false,
+      },
       {
         source: "/es/token-ethix",
-        destination:
-          "https://ethichub.gitbook.io/ethichub/mecanismos-de-financiamiento-y-garantia/ethix",
+        destination: "/es/docs/mecanismos-de-financiamiento-y-garantia/ethix",
         permanent: true,
       },
       {
         source: "/en/token-ethix",
-        destination:
-          "https://ethichub.gitbook.io/ethichub/en/financing-and-guarantee-mechanisms/ethix",
+        destination: "/en/docs/financing-and-guarantee-mechanisms/ethix",
         permanent: true,
       },
       // terms

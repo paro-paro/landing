@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { locales } from '@/i18n/config'
 import { getAllPosts, getAllTags } from '@/lib/blog'
 import { getAlternateSlug, getAlternateTag } from '@/lib/blog-translations'
+import { getAllDocSlugs } from '@/lib/docs'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ethichub.com'
 
@@ -94,6 +95,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
             en: `${siteUrl}/en/blog/tag/${encodeURIComponent(enTag)}`,
           },
         },
+      })
+    }
+  }
+
+  // Doc pages for each locale
+  for (const locale of locales) {
+    const slugs = getAllDocSlugs(locale)
+    for (const slug of slugs) {
+      entries.push({
+        url: `${siteUrl}/${locale}/docs/${slug.join('/')}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
       })
     }
   }

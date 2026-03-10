@@ -36,7 +36,7 @@
   
   /* Muted - Lighter sage */
   --muted: #E6EAE5;
-  --muted-foreground: #4A6275;
+  --muted-foreground: #2B4255;
   
   /* Accent - Bright green #87F96E (used for highlights/CTAs) */
   --accent: #87F96E;
@@ -98,7 +98,7 @@
   
   /* Muted */
   --muted: #0A3D5F;
-  --muted-foreground: #9BB5C5;
+  --muted-foreground: #C5D8E3;
   
   /* Accent - Bright green (perfect pop in dark mode) */
   --accent: #87F96E;

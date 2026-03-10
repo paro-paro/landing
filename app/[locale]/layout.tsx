@@ -8,8 +8,6 @@ import { GoogleTagManager } from "@next/third-parties/google"
 import { Toaster } from "@/components/ui/sonner"
 import { Nunito } from "next/font/google"
 import { locales } from "@/i18n/config"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import "../globals.css"
 
 const nunito = Nunito({
@@ -123,9 +121,7 @@ export default async function LocaleLayout({
       <GoogleTagManager gtmId="GTM-MDBKCTLD" />
       <body className="font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          {children}
         </NextIntlClientProvider>
         <Analytics />
         <Toaster position="top-center" />

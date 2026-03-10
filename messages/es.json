@@ -9,6 +9,7 @@
     "greenCoffee": "Café Verde",
     "roastedCoffee": "Café Tostado",
     "blog": "Blog",
+    "docs": "Docs",
     "investNow": "Invertir ahora",
     "buyCoffee": "Comprar café"
   },
@@ -329,6 +330,13 @@
       "specialties": "Especialidades",
       "endorseOriginator": "Invertir ahora"
     }
+  },
+  "docs": {
+    "title": "Documentación",
+    "description": "Documentación oficial de EthicHub. Aprende sobre nuestra plataforma, modelo de negocio y mecanismos de financiamiento.",
+    "back": "Ir a EthicHub",
+    "previous": "Anterior",
+    "next": "Siguiente"
   },
   "blog": {
     "title": "Blog",

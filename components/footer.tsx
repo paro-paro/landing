@@ -23,10 +23,10 @@ export function Footer() {
     [t("sections.company")]: [
       { label: t("links.blog"), href: `/${locale}/blog` },
       { label: t("links.forum"), href: "https://forum.ethichub.com/" },
-      { label: t("links.faqs"), href: "https://help.ethichub.com/" },
+      { label: t("links.faqs"), href: `/${locale}/faqs` },
     ],
     [t("sections.resources")]: [
-      { label: t("links.documentation"), href: locale === "en" ? "https://ethichub.gitbook.io/ethichub/en" : "https://ethichub.gitbook.io/ethichub/" },
+      { label: t("links.documentation"), href: locale === "en" ? `/${locale}/docs/introduction/ethichub` : `/${locale}/docs/introduccion/ethichub` },
       { label: t("links.glossary"), href: `/${locale}/glossary` },
       { label: t("links.brandKit"), href: "/brandkit.pptx", download: true },
     ],

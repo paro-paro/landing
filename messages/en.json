@@ -9,6 +9,7 @@
     "greenCoffee": "Green Coffee",
     "roastedCoffee": "Roasted Coffee",
     "blog": "Blog",
+    "docs": "Docs",
     "investNow": "Invest now",
     "buyCoffee": "Buy coffee"
   },
@@ -329,6 +330,13 @@
       "specialties": "Specialties",
       "endorseOriginator": "Invest now"
     }
+  },
+  "docs": {
+    "title": "Docs",
+    "description": "Official EthicHub documentation. Learn about our platform, business model and financing mechanisms.",
+    "back": "Go to EthicHub",
+    "previous": "Previous",
+    "next": "Next"
   },
   "blog": {
     "title": "Blog",
