@@ -60,18 +60,16 @@ landing/
 │   ├── docs/
 │   │   ├── en/                # English docs (MDX, by section)
 │   │   └── es/                # Spanish docs (MDX, by section)
-│   └── faqs/                  # FAQ content (MDX, by category)
-│       ├── informacion-ethichub/
-│       ├── inversiones/
-│       ├── plataforma/
-│       └── ...                # 12 categories total
+│   └── faqs/                  # FAQ content (MDX, by locale & category)
+│       ├── es/                # Spanish FAQs (12 categories)
+│       └── en/                # English FAQs (12 categories)
 ├── i18n/
 │   ├── config.ts              # Locale configuration
 │   └── request.ts             # next-intl request config
 ├── lib/
 │   ├── blog.ts                # Blog utilities (getAllPosts, etc.)
 │   ├── docs.ts                # Docs utilities (getDocBySlug, getDocsNavigation, etc.)
-│   ├── faqs.ts                # FAQ utilities (getAllFaqs, markdownToHtml)
+│   ├── faqs.ts                # FAQ utilities (getAllFaqs(locale), markdownToHtml)
 │   └── utils.ts               # cn() utility function
 ├── messages/
 │   ├── en.json                # English translations
@@ -120,7 +118,7 @@ export function Component() {
 
 **Translation Files:** `messages/{locale}.json`
 
-Namespaces: `nav`, `hero`, `about`, `features`, `pricing`, `testimonials`, `cta`, `footer`, `coffee`, `farmers`, `blog`, `glossary`, `legal`, `common`, `languageSwitcher`, `docs`
+Namespaces: `nav`, `hero`, `about`, `features`, `pricing`, `testimonials`, `cta`, `footer`, `coffee`, `farmers`, `blog`, `glossary`, `legal`, `common`, `languageSwitcher`, `docs`, `faqs`
 
 **Arrays in Translations:** Access with `t.raw()`:
 ```typescript
@@ -275,6 +273,13 @@ Each page generates metadata with:
 - Open Graph tags
 - Twitter cards
 
+**Title Pattern:** `Specific - Section - EthicHub` (from specific to general)
+- Blog post: `Post Title - Blog - EthicHub`
+- Blog tag: `Tag Name - Blog - EthicHub`
+- Doc page: `Page Title - Documentación - EthicHub` / `Page Title - Documentation - EthicHub`
+- Farmer profile: `Name - Nuestros Agricultores - EthicHub` / `Name - Our Farmers - EthicHub`
+- Top-level pages: `Page Title - EthicHub`
+
 **Pattern:**
 ```typescript
 export async function generateMetadata({ params }) {
@@ -357,6 +362,6 @@ pnpm lint     # Run ESLint
 2. **Images Unoptimized** - `images: { unoptimized: true }`
 3. **Glossary Terms** - Hardcoded in Spanish only (domain-specific terminology)
 4. **Originator Data** - Hardcoded in `farmers/[slug]/page.tsx` (would ideally come from CMS)
-5. **FAQs** - Spanish only, migrated from Zendesk. Content in `content/faqs/` as MDX, converted to HTML via custom `markdownToHtml()` in `lib/faqs.ts`
+5. **FAQs** - Bilingual (ES and EN), migrated from Zendesk. Content in `content/faqs/{locale}/` as MDX (12 categories per locale), converted to HTML via custom `markdownToHtml()` in `lib/faqs.ts`. Uses `?q=` query param for deep-linking to categories
 6. **Docs** - Migrated from GitBook. ES and EN content in `content/docs/`. Rendered with `MDXRemote`. Has its own layout outside `(main)` route group (no shared header/footer, uses a back link instead)
 7. **CLAUDE.md** - Symlinked to AGENTS.md
