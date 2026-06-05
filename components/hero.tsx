@@ -9,7 +9,6 @@ import { useEffect, useState, useRef } from "react"
 
 const stats = [
   { value: 500, prefix: "+", suffix: "", labelKey: "projectsFunded" },
-  { value: 100, prefix: "", suffix: "%", labelKey: "investmentReturn" },
   { value: 6, prefix: "+", suffix: "M€", labelKey: "totalCapital" },
   { value: 2000, prefix: "+", suffix: "", labelKey: "impactInvestors" },
 ]
